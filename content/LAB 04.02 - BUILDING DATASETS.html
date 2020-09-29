@@ -1,0 +1,529 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LAB 04.02 - Buiding Datasets &#8212; 20201 Inteligencia Artificial para Ciencias e Ingenierías</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">20201 Inteligencia Artificial para Ciencias e Ingenierías</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Información del curso
+  </a>
+ </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/LAB 04.02 - BUILDING DATASETS.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rramosp/x20201.ai4eng/blob/master/content/LAB 04.02 - BUILDING DATASETS.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#understand-the-ashrae-energy-prediction-in-kaggle">
+   Understand the ASHRAE Energy Prediction in Kaggle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-build-a-training-dataset">
+   Task 1: Build a training dataset
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#provide-your-answer-here-drop-the-decimals">
+     provide your answer here, drop the decimals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-2-time-series-missing-data-fix">
+   Task 2. Time series missing data fix
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fill-in-your-fixed-time-series">
+     fill in your fixed time series
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-3-build-a-time-series-predictive-dataset">
+   Task 3. Build a time series predictive dataset
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fill-in-your-answer">
+     fill in your answer
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lab-04-02-buiding-datasets">
+<h1>LAB 04.02 - Buiding Datasets<a class="headerlink" href="#lab-04-02-buiding-datasets" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget --no-cache -O init.py -q https://raw.githubusercontent.com/rramosp/20201.ai4eng/master/init.py
+<span class="kn">import</span> <span class="nn">init</span><span class="p">;</span> <span class="n">init</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">force_download</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span> <span class="n">init</span><span class="o">.</span><span class="n">get_weblink</span><span class="p">()</span>
+<span class="n">init</span><span class="o">.</span><span class="n">endpoint</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">local.lib.rlxmoocapi</span> <span class="kn">import</span> <span class="n">submit</span><span class="p">,</span> <span class="n">session</span>
+<span class="n">student</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">Session</span><span class="p">(</span><span class="n">init</span><span class="o">.</span><span class="n">endpoint</span><span class="p">)</span><span class="o">.</span><span class="n">login</span><span class="p">(</span> <span class="n">course_id</span><span class="o">=</span><span class="n">init</span><span class="o">.</span><span class="n">course_id</span><span class="p">,</span> 
+                                                <span class="n">session_id</span><span class="o">=</span><span class="s2">&quot;UDEA&quot;</span><span class="p">,</span> 
+                                                <span class="n">lab_id</span><span class="o">=</span><span class="s2">&quot;L04.02&quot;</span> <span class="p">)</span>
+<span class="n">init</span><span class="o">.</span><span class="n">get_weblink</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="understand-the-ashrae-energy-prediction-in-kaggle">
+<h2>Understand the ASHRAE Energy Prediction in Kaggle<a class="headerlink" href="#understand-the-ashrae-energy-prediction-in-kaggle" title="Permalink to this headline">¶</a></h2>
+<p>Follow this link: https://www.kaggle.com/c/ashrae-energy-prediction, register for the task and download the data.</p>
+<p>In particular, understand:</p>
+<ul class="simple">
+<li><p>The machine learning task they define (what they want to predict)</p></li>
+<li><p>How the data is provided</p></li>
+<li><p>The structure and relation between the files <code class="docutils literal notranslate"><span class="pre">train.csv</span></code>, <code class="docutils literal notranslate"><span class="pre">weather_train.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">building_metadata.csv</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="task-1-build-a-training-dataset">
+<h2>Task 1: Build a training dataset<a class="headerlink" href="#task-1-build-a-training-dataset" title="Permalink to this headline">¶</a></h2>
+<p>Execute the cell below and you will be given a <strong>building_id</strong> and a <strong>date</strong>. You will have to:</p>
+<ol class="simple">
+<li><p>Build a table containing one row per hour and the following columns <strong>only for that building_id and date</strong>:
+‘meter_reading’, ‘site_id’, ‘air_temperature’, ‘cloud_coverage’,
+‘dew_temperature’, ‘precip_depth_1_hr’, ‘sea_level_pressure’,
+‘wind_direction’, ‘wind_speed’, ‘square_feet’, ‘year_built’
+Note that you will have to gather this information from the different csv sources.</p></li>
+<li><p>use only measures with <code class="docutils literal notranslate"><span class="pre">meter</span></code>=0</p></li>
+<li><p>Fill any missing values with zero.</p></li>
+<li><p>Extract the column of the target variable and sum all values.</p></li>
+<li><p>Sum all the values of the rest of the columns.</p></li>
+<li><p>Fill in those values in the variables below.</p></li>
+<li><p>Submit your answer.</p></li>
+</ol>
+<p>Observe that, with this dataset, we could train a model to make predictions of the target variable, taking the rest of the variables as input.</p>
+<p>For instance, for building number 900, on 2016-02-01:</p>
+<ul class="simple">
+<li><p>there are 24 records</p></li>
+<li><p>the sum of all values of the target variable is 4941 (cropping decimals)</p></li>
+<li><p>the sum of all values of the rest of the variables is 2705422 (cropping decimals)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">local.lib</span> <span class="kn">import</span> <span class="n">labutils</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">bid</span><span class="p">,</span> <span class="n">date</span> <span class="o">=</span> <span class="n">labutils</span><span class="o">.</span><span class="n">biddate_for_student</span><span class="p">(</span><span class="n">student</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;your building_id&quot;</span><span class="p">,</span> <span class="n">bid</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;your date       &quot;</span><span class="p">,</span> <span class="n">date</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wc train.csv
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="p">[(</span><span class="n">dm</span><span class="o">.</span><span class="n">building_id</span><span class="o">==</span><span class="n">bid</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">meter</span><span class="o">==</span><span class="mi">0</span><span class="p">)][</span><span class="n">date</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="provide-your-answer-here-drop-the-decimals">
+<h3>provide your answer here, drop the decimals<a class="headerlink" href="#provide-your-answer-here-drop-the-decimals" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># target variable sum</span>
+<span class="n">sumY</span> <span class="o">=</span> 
+
+<span class="c1"># input variables sum</span>
+<span class="n">sumX</span> <span class="o">=</span> 
+
+<span class="n">sumX</span><span class="p">,</span> <span class="n">sumY</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>submit your answer</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student</span><span class="o">.</span><span class="n">submit_task</span><span class="p">(</span><span class="nb">globals</span><span class="p">(),</span> <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;task_01&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="task-2-time-series-missing-data-fix">
+<h2>Task 2. Time series missing data fix<a class="headerlink" href="#task-2-time-series-missing-data-fix" title="Permalink to this headline">¶</a></h2>
+<p>Observe how we can fill in missing data in a time series, by simply repeating the last seen value in the missing places.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;local/imgs/timeseries-ffill.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LAB 04.02 - BUILDING DATASETS_17_0.png" src="../_images/LAB 04.02 - BUILDING DATASETS_17_0.png" />
+</div>
+</div>
+<p>Using the weather data from the ASHRAE Kaggle competition that you must have downloaded in the previous task you will have to:</p>
+<ol class="simple">
+<li><p>Extract the time series for the variable <code class="docutils literal notranslate"><span class="pre">cloud_coverage</span></code> for <strong>site_id=3</strong> and for the <strong>date assigned to you</strong> (execute the cell below). This time series will have 24 values (including missing values).</p></li>
+<li><p>Fill in the missing data by repeating the last seen value as in the example above</p></li>
+<li><p>Report the time series as a Pyton list in the variable <code class="docutils literal notranslate"><span class="pre">fixed_ts</span></code> below</p></li>
+</ol>
+<p>Again, use any tool of your choice to generate your result</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">local.lib</span> <span class="kn">import</span> <span class="n">labutils</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">date</span> <span class="o">=</span> <span class="n">labutils</span><span class="o">.</span><span class="n">biddate_for_student</span><span class="p">(</span><span class="n">student</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;your date       &quot;</span><span class="p">,</span> <span class="n">date</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="fill-in-your-fixed-time-series">
+<h3>fill in your fixed time series<a class="headerlink" href="#fill-in-your-fixed-time-series" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for instance</span>
+<span class="c1"># fixed_ts = [6,6,6,4,4,5,6,7,7,7,6,6,6,5,4,3,2,2,1,1,1,2,3,4]</span>
+<span class="n">fixed_ts</span> <span class="o">=</span> <span class="p">[</span>  <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>submit your answer</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student</span><span class="o">.</span><span class="n">submit_task</span><span class="p">(</span><span class="nb">globals</span><span class="p">(),</span> <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;task_02&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="task-3-build-a-time-series-predictive-dataset">
+<h2>Task 3. Build a time series predictive dataset<a class="headerlink" href="#task-3-build-a-time-series-predictive-dataset" title="Permalink to this headline">¶</a></h2>
+<p>You will now build a predictive dataset for a single time series. This dataset can later be used with predictive models. The machine learning task we will try to adress is the following:</p>
+<blockquote>
+<div><p><strong>Given three consecutive points of a time series, we want a model to predict the next one.</strong></p>
+</div></blockquote>
+<p>Starting from a time series (a list of of <span class="math notranslate nohighlight">\(n\)</span> numbers) you will have to build a dataset such as in the following example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">44</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ts</span><span class="p">)),</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ts</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">ts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[44 45 42 38 47 45 46 44 47 52 53 48 46 42 42 34 30 27 24 24]
+</pre></div>
+</div>
+<img alt="../_images/LAB 04.02 - BUILDING DATASETS_26_1.png" src="../_images/LAB 04.02 - BUILDING DATASETS_26_1.png" />
+</div>
+</div>
+<p>dataset:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[[[44, 45, 42], 38],
+ [[45, 42, 38], 47],
+ [[42, 38, 47], 45],
+ [[38, 47, 45], 46],
+ [[47, 45, 46], 44],
+ [[45, 46, 44], 47],
+ [[46, 44, 47], 52],
+ [[44, 47, 52], 53],
+ [[47, 52, 53], 48],
+ [[52, 53, 48], 46],
+ [[53, 48, 46], 42],
+ [[48, 46, 42], 42],
+ [[46, 42, 42], 34],
+ [[42, 42, 34], 30],
+ [[42, 34, 30], 27],
+ [[34, 30, 27], 24]]
+</pre></div>
+</div>
+<p>observe that each line in the dataset represents one input-output pair, like a sliding window over the time series.</p>
+<p>We created two components:</p>
+<ul class="simple">
+<li><p>a matrix <span class="math notranslate nohighlight">\(X\)</span> of dimensions <code class="docutils literal notranslate"><span class="pre">(len(ts)-n-1,3)</span></code> gathering all inputs, in the case above with dimensions <code class="docutils literal notranslate"><span class="pre">(17,3)</span></code></p></li>
+<li><p>a vector <span class="math notranslate nohighlight">\(y\)</span> of dimension <code class="docutils literal notranslate"><span class="pre">(len(ts)-n-1)</span></code> gathering each corresponding expected output, in the case above with dimensions <code class="docutils literal notranslate"><span class="pre">(17)</span></code>.</p></li>
+</ul>
+<p>In this task, you will have to:</p>
+<ol class="simple">
+<li><p>Take the time series you created in the previous task, where you fixed the missing values.</p></li>
+<li><p>Build <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(y\)</span> such as above with <span class="math notranslate nohighlight">\(n=3\)</span>. If your time series has 24 data points, then X dimensions will be (20,3) and y dimensions will be (20)</p></li>
+</ol>
+<p>Again, use any tool of your choice to generate your result.</p>
+<div class="section" id="fill-in-your-answer">
+<h3>fill in your answer<a class="headerlink" href="#fill-in-your-answer" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span>  <span class="p">,</span>  <span class="p">,</span>  <span class="p">],</span>
+      <span class="p">[</span>  <span class="p">,</span>  <span class="p">,</span>  <span class="p">],</span>
+      <span class="p">[</span>  <span class="p">,</span>  <span class="p">,</span>  <span class="p">]</span> 
+       <span class="o">....</span>
+    <span class="p">]</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span> <span class="p">,</span> <span class="p">,</span> <span class="p">,</span> <span class="p">,</span> <span class="o">...</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>submit your answer</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student</span><span class="o">.</span><span class="n">submit_task</span><span class="p">(</span><span class="nb">globals</span><span class="p">(),</span> <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;task_03&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Raúl Ramos / Universidad de Antioquia<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04.03 - HYPOTHESIS TESTING &#8212; 20201 Inteligencia Artificial para Ciencias e Ingenierías</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">20201 Inteligencia Artificial para Ciencias e Ingenierías</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Información del curso
+  </a>
+ </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/NOTES 04.03 - SIMPLE HYPOTHESIS TESTING.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rramosp/x20201.ai4eng/blob/master/content/NOTES 04.03 - SIMPLE HYPOTHESIS TESTING.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stochastic-models">
+   Stochastic models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#confidence-on-models">
+   Confidence on models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-define-the-model-you-want-to-challenge-the-null-hypothesis-h-0">
+     STEP 1: Define the model you want to challenge (the NULL  Hypothesis
+     <span class="math notranslate nohighlight">
+      \(H_0\)
+     </span>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-define-your-real-world-sample-and-your-test-statistic">
+     STEP 2: Define your REAL WORLD sample and your test statistic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-understand-the-test-statistic-distribution-under-h-0-if-the-model-is-true">
+     STEP 3: Understand the TEST STATISTIC distribution under
+     <span class="math notranslate nohighlight">
+      \(H_0\)
+     </span>
+     (if the model is True)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#we-will-not-use-formulas-only-simulation">
+       We will NOT USE FORMULAS, only SIMULATION
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-measure-the-likelihood-of-the-real-world-sample-w-r-t-h-0">
+     STEP 4: measure the likelihood of the REAL WORLD sample w.r.t.
+     <span class="math notranslate nohighlight">
+      \(H_0\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-if-we-consider-h3-with-30-students">
+     What if we consider H3, with 30 students?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terminology">
+   Terminology
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulations-and-formulas">
+   Simulations and Formulas
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="hypothesis-testing">
+<h1>04.03 - HYPOTHESIS TESTING<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget --no-cache -O init.py -q https://raw.githubusercontent.com/rramosp/20201.ai4eng/master/init.py
+<span class="kn">import</span> <span class="nn">init</span><span class="p">;</span> <span class="n">init</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">force_download</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span> <span class="n">init</span><span class="o">.</span><span class="n">get_weblink</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">progressbar</span> <span class="kn">import</span> <span class="n">progressbar</span> <span class="k">as</span> <span class="n">pbar</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="stochastic-models">
+<h2>Stochastic models<a class="headerlink" href="#stochastic-models" title="Permalink to this headline">¶</a></h2>
+<p>A probabilistic (or stochastic) model is one that assigns probabilities to the different objects or events it attempts to describe. For instance,</p>
+<ul class="simple">
+<li><p>The probability of a patient to have different glucose levels.</p></li>
+<li><p>The probability of students to obtain different scores in an exam</p></li>
+</ul>
+<p>A stochastic model</p>
+<ul class="simple">
+<li><p>Just provides a probability for each object (a number between 0 and 1)</p></li>
+<li><p>Does not necessarily provide an explanation on <strong>HOW</strong> probabilities arise.</p></li>
+<li><p>Is given as a <strong>probability distribution</strong> with its corresponding PDF (<strong>probability density function</strong>), by which we can compute any probability</p></li>
+</ul>
+</div>
+<div class="section" id="confidence-on-models">
+<h2>Confidence on models<a class="headerlink" href="#confidence-on-models" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-1-define-the-model-you-want-to-challenge-the-null-hypothesis-h-0">
+<h3>STEP 1: Define the model you want to challenge (the NULL  Hypothesis <span class="math notranslate nohighlight">\(H_0\)</span>)<a class="headerlink" href="#step-1-define-the-model-you-want-to-challenge-the-null-hypothesis-h-0" title="Permalink to this headline">¶</a></h3>
+<p>A researcher brings a stochastic model claiming that students’ scores in a certain exam follow a normal distribution with <span class="math notranslate nohighlight">\(\mu=100\)</span> and <span class="math notranslate nohighlight">\(\sigma=15\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h0</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">h0</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">rx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rx</span><span class="p">,</span> <span class="n">h0</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">rx</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;student exam score&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;probability&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You are <strong>NOT SURE</strong> if the model works well with your students, so you start looking (<strong>sampling</strong>) at their exam scores. How much would you trust the model in the following cases:</p>
+<ul class="simple">
+<li><p>H1: You sample 5 students and their average score is 110</p></li>
+<li><p>H2: You sample 5 students and their average score is 105</p></li>
+<li><p>H3: You sample 30 students and their average score is 105</p></li>
+</ul>
+</div>
+<div class="section" id="step-2-define-your-real-world-sample-and-your-test-statistic">
+<h3>STEP 2: Define your REAL WORLD sample and your test statistic<a class="headerlink" href="#step-2-define-your-real-world-sample-and-your-test-statistic" title="Permalink to this headline">¶</a></h3>
+<p>The test statistic is what you <strong>are interesting</strong> in computing from a real world sample.</p>
+<ul class="simple">
+<li><p><strong>SAMPLE</strong>: a set of 5 students.</p></li>
+<li><p><strong>TEST STATISTIC</strong>: the average exam score of the sample</p></li>
+</ul>
+</div>
+<div class="section" id="step-3-understand-the-test-statistic-distribution-under-h-0-if-the-model-is-true">
+<h3>STEP 3: Understand the TEST STATISTIC distribution under  <span class="math notranslate nohighlight">\(H_0\)</span> (if the model is True)<a class="headerlink" href="#step-3-understand-the-test-statistic-distribution-under-h-0-if-the-model-is-true" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="we-will-not-use-formulas-only-simulation">
+<h4>We will NOT USE FORMULAS, only SIMULATION<a class="headerlink" href="#we-will-not-use-formulas-only-simulation" title="Permalink to this headline">¶</a></h4>
+<p>Let’s assume the model is right, let’s <strong>SIMULATE</strong> we select 5 students from the model’s probability distribution. We do <strong>10 simulations</strong>.</p>
+<p>Run the cells below several times, and ask yourself the following questions:</p>
+<ul class="simple">
+<li><p>how probable is that you see 5 students with average score 110 or higher?</p></li>
+<li><p>how probable is that you see 5 students with average score 105 or higher?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;sample </span><span class="si">%2d</span><span class="s2">: &quot;</span><span class="o">%</span><span class="k">n</span>+ &quot; &quot;.join([&quot;%5.1f&quot;%i for i in s]), &quot; mean: %7.2f&quot;%np.mean(s))
+</pre></div>
+</div>
+</div>
+</div>
+<p>let’s do the simulation <strong>10000 times</strong> and answer the questions</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;avg score for 5 students&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;probability&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;THE SAMPLING DISTRIBUTION&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-4-measure-the-likelihood-of-the-real-world-sample-w-r-t-h-0">
+<h3>STEP 4: measure the likelihood of the REAL WORLD sample w.r.t. <span class="math notranslate nohighlight">\(H_0\)</span><a class="headerlink" href="#step-4-measure-the-likelihood-of-the-real-world-sample-w-r-t-h-0" title="Permalink to this headline">¶</a></h3>
+<p>let’s see and measure where our REAL WORLD sample falls in the distribution for the test statistic under <span class="math notranslate nohighlight">\(H_0\)</span></p>
+<ul class="simple">
+<li><p>if our REAL WORLD sample is too rare <span class="math notranslate nohighlight">\(\rightarrow\)</span> we have less trust in the <span class="math notranslate nohighlight">\(H_0\)</span> model</p></li>
+<li><p>if our REAL WORLD sample is common <span class="math notranslate nohighlight">\(\rightarrow\)</span> we have more trust in the <span class="math notranslate nohighlight">\(H_0\)</span> model</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;H2: p-value&gt;</span><span class="si">%.2f</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">np</span>.mean(z&gt;105))
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">110</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;H1: p-value&gt;</span><span class="si">%.2f</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">np</span>.mean(z&gt;110))
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="mi">95</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CONFIDENCE LEVEL&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;avg score for 10 students&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;probability&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;THE SAMPLING DISTRIBUTION&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, if when we took 5 students we measured an average score of 115 or 105, <strong>would you trust this model?</strong></p>
+<p>Observe that,</p>
+<ul class="simple">
+<li><p>We only have <strong>ONE REAL WORLD SAMPLE</strong>, but we made <strong>10000 SIMULATIONS</strong>.</p></li>
+<li><p>The distribution above is called the <strong>SAMPLING DISTRIBUTION</strong>.</p></li>
+<li><p>The <strong>p-value</strong> is the probability of seeing something like our <strong>REAL WORLD SAMPLE</strong>, or even more extreme, <strong>according to the model</strong> we are testing.</p></li>
+<li><p>What we did is called a <strong>Z-TEST</strong>.</p></li>
+<li><p>It is standard to consider a <strong>p-value&lt;0.05</strong> to indicate that our <strong>REAL WORLD SAMPLE</strong> has a very small probability <strong>according to the model</strong> and thus, there must be <strong>something wrong with the model</strong>.</p></li>
+<li><p><strong>Central Limit Theorem</strong>: regardless the shape of the original disitrution, the sampling distribution will <strong>always be a Normal distribution</strong>.</p></li>
+</ul>
+<p><strong>Challenge</strong>: understand the Python code for sampling</p>
+</div>
+<div class="section" id="what-if-we-consider-h3-with-30-students">
+<h3>What if we consider H3, with 30 students?<a class="headerlink" href="#what-if-we-consider-h3-with-30-students" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Another simulation, another sampling distribution.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>  <span class="n">label</span><span class="o">=</span><span class="s2">&quot;H2: p-value&gt;</span><span class="si">%.2f</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">np</span>.mean(z&gt;105))
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;avg score for 30 students&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;probability&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="mi">95</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CONFIDENCE LEVEL&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;THE SAMPLING DISTRIBUTION&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>WE HAVE LEST TRUST IN OUR MODEL NOW!!</strong> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <strong>WHY?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]]</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]]</span>
+<span class="n">z3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">z1</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;sample size = 30&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">z2</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;sample size = 5&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">z3</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;sample size = 100&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;THE SAMPLING DISTRIBUTION&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="terminology">
+<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>NULL HYPOTHESIS</strong> <span class="math notranslate nohighlight">\(H_0\)</span>: The model we are testing whether we can reject it or not.</p></li>
+<li><p><strong>REAL WORLD SAMPLE</strong>: What we measure in reality to a limited number of objects.</p></li>
+<li><p><strong>TEST STATISTIC</strong>: What we compute from the real world sample (the average, in our case).</p></li>
+<li><p><strong>SAMPLING DISTRIBUTION</strong>: The distribution of simulating <strong>many</strong> real world examples and computing the test statistic to each of them.</p></li>
+<li><p><strong>p-value</strong>: The probability of seeing in the simulation something as <strong>rare</strong> as our real world example.</p></li>
+<li><p><strong>CONFIDENCE LEVEL</strong>: The minimum p-value we are willing to observe to NOT consider to distrust <span class="math notranslate nohighlight">\(H_0\)</span></p></li>
+<li><p><strong>REJECT <span class="math notranslate nohighlight">\(H_0\)</span></strong>: When we observe a p-value lower than the confidence level, meaning that our real world sample is <strong>too rare</strong>.</p></li>
+<li><p><strong>FAIL TO REJECT <span class="math notranslate nohighlight">\(H_0\)</span></strong>: When we observe a p-value higher than the confidence level, meaning that our real world sample is <strong>fairly normal</strong>.</p></li>
+<li><p><strong>MONTE CARLO SIMULATION</strong>: What we did!!!</p></li>
+</ul>
+</div>
+<div class="section" id="simulations-and-formulas">
+<h2>Simulations and Formulas<a class="headerlink" href="#simulations-and-formulas" title="Permalink to this headline">¶</a></h2>
+<p>We do simulation because we have computers. When these tests were invented, computers were not around, so people developed tables and formulas to compute <strong>by hand</strong> the p-values.</p>
+<p>If <strong>simulating is hard</strong> we can always use the analytical formula.</p>
+<div class="math notranslate nohighlight">
+\[p_{value} = 1 - \mathcal{N}(0,1).\text{cdf}\Big( \frac{\bar{x}-\mu}{\sigma / \sqrt{n}} \Big) \]</div>
+<p>Where <span class="math notranslate nohighlight">\(\mathcal{N}(0,1).\text{cdf}\)</span> is the Cummulative Density Function of the Standard Normal distribution</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">real_world_sample_mean</span> <span class="o">=</span> <span class="mi">105</span>
+<span class="n">real_world_sample_size</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">model_mu</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">model_sigma</span> <span class="o">=</span> <span class="mi">15</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">real_world_sample_size</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]]</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;simulated p-value </span><span class="si">%.3f</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">np</span>.mean(real_world_sample_mean&lt;z))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;analytical, p-value </span><span class="si">%.3f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span><span class="o">.</span><span class="n">cdf</span><span class="p">((</span><span class="n">real_world_sample_mean</span><span class="o">-</span><span class="n">model_mu</span><span class="p">)</span>\
+                                                    <span class="o">/</span><span class="p">(</span><span class="n">model_sigma</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">real_world_sample_size</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For more info:</p>
+<ul class="simple">
+<li><p>Sampling distribution of the sample mean <a class="reference external" href="https://www.khanacademy.org/math/ap-statistics/sampling-distribution-ap/sampling-distribution-mean/v/sampling-distribution-of-the-sample-mean">Khan Academy</a></p></li>
+<li><p>Central limit theorem <a class="reference external" href="https://en.wikipedia.org/wiki/Central_limit_theorem">Wikipedia</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "p38"
+        },
+        kernelOptions: {
+            kernelName: "p38",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'p38'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Raúl Ramos / Universidad de Antioquia<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
+    
+  </body>
+</html>

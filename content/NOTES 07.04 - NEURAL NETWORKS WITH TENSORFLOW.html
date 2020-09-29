@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>07.04 - NEURAL NETWORKS WITH TENSORFLOW &#8212; 20201 Inteligencia Artificial para Ciencias e Ingenierías</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">20201 Inteligencia Artificial para Ciencias e Ingenierías</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Información del curso
+  </a>
+ </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/NOTES 07.04 - NEURAL NETWORKS WITH TENSORFLOW.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rramosp/x20201.ai4eng/blob/master/content/NOTES 07.04 - NEURAL NETWORKS WITH TENSORFLOW.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-dataset-again">
+   A dataset (again)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-neural-network-in-tensorflow-4-neurons-in-the-hidden-layer-1-output">
+   A neural network in tensorflow, 4 neurons in the hidden layer, 1 output
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-bigger-network">
+   A bigger network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cross-entropy-multiclass-classification">
+   Cross entropy - multiclass classification
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="neural-networks-with-tensorflow">
+<h1>07.04 - NEURAL NETWORKS WITH TENSORFLOW<a class="headerlink" href="#neural-networks-with-tensorflow" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget --no-cache -O init.py -q https://raw.githubusercontent.com/rramosp/20201.ai4eng/master/init.py
+<span class="kn">import</span> <span class="nn">init</span><span class="p">;</span> <span class="n">init</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">force_download</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span> <span class="n">init</span><span class="o">.</span><span class="n">get_weblink</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">local.lib</span> <span class="kn">import</span> <span class="n">mlutils</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="o">%</span><span class="k">tensorflow_version</span> 2.x
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Using TF2 in Google Colab&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="a-dataset-again">
+<h2>A dataset (again)<a class="headerlink" href="#a-dataset-again" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_moons</span>
+<span class="n">X</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">make_moons</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="n">noise</span><span class="o">=.</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">][</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">][</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;class 0&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">][</span><span class="n">y</span><span class="o">==</span><span class="mi">1</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">][</span><span class="n">y</span><span class="o">==</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;class 1&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f34b2988f70&gt;
+</pre></div>
+</div>
+<img alt="../_images/NOTES 07.04 - NEURAL NETWORKS WITH TENSORFLOW_4_1.png" src="../_images/NOTES 07.04 - NEURAL NETWORKS WITH TENSORFLOW_4_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="a-neural-network-in-tensorflow-4-neurons-in-the-hidden-layer-1-output">
+<h2>A neural network in tensorflow, 4 neurons in the hidden layer, 1 output<a class="headerlink" href="#a-neural-network-in-tensorflow-4-neurons-in-the-hidden-layer-1-output" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;tanh&#39;</span><span class="p">),</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)</span>
+<span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=.</span><span class="mi">5</span><span class="p">),</span>
+              <span class="n">loss</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">BinaryCrossentropy</span><span class="p">(</span><span class="n">from_logits</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span><span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/10
+300/300 [==============================] - 0s 480us/step - loss: 0.4007 - accuracy: 0.8267
+Epoch 2/10
+300/300 [==============================] - 0s 478us/step - loss: 0.3605 - accuracy: 0.8467
+Epoch 3/10
+300/300 [==============================] - 0s 469us/step - loss: 0.2444 - accuracy: 0.8900
+Epoch 4/10
+300/300 [==============================] - 0s 473us/step - loss: 0.1709 - accuracy: 0.9467
+Epoch 5/10
+300/300 [==============================] - 0s 470us/step - loss: 0.1837 - accuracy: 0.9467
+Epoch 6/10
+300/300 [==============================] - 0s 455us/step - loss: 0.1485 - accuracy: 0.9600
+Epoch 7/10
+300/300 [==============================] - 0s 467us/step - loss: 0.1072 - accuracy: 0.9633
+Epoch 8/10
+300/300 [==============================] - 0s 456us/step - loss: 0.0981 - accuracy: 0.9667
+Epoch 9/10
+300/300 [==============================] - 0s 472us/step - loss: 0.1252 - accuracy: 0.9600
+Epoch 10/10
+300/300 [==============================] - 0s 465us/step - loss: 0.1253 - accuracy: 0.9633
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;tensorflow.python.keras.callbacks.History at 0x7f3430485850&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predict</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">X</span><span class="p">:</span> <span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;.</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">mlutils</span><span class="o">.</span><span class="n">plot_2Ddata_with_boundary</span><span class="p">(</span><span class="n">predict</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.5318, 0.4682)
+</pre></div>
+</div>
+<img alt="../_images/NOTES 07.04 - NEURAL NETWORKS WITH TENSORFLOW_8_1.png" src="../_images/NOTES 07.04 - NEURAL NETWORKS WITH TENSORFLOW_8_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="a-bigger-network">
+<h2>A bigger network<a class="headerlink" href="#a-bigger-network" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>different activation functions</p></li>
+<li><p>different optimizer</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;tanh&#39;</span><span class="p">),</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)</span>
+<span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=.</span><span class="mi">01</span><span class="p">),</span>
+              <span class="n">loss</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">BinaryCrossentropy</span><span class="p">(</span><span class="n">from_logits</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span><span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/10
+300/300 [==============================] - 0s 510us/step - loss: 0.3400 - accuracy: 0.8567
+Epoch 2/10
+300/300 [==============================] - 0s 508us/step - loss: 0.2804 - accuracy: 0.8867
+Epoch 3/10
+300/300 [==============================] - 0s 487us/step - loss: 0.2450 - accuracy: 0.8967
+Epoch 4/10
+300/300 [==============================] - 0s 532us/step - loss: 0.1722 - accuracy: 0.9433
+Epoch 5/10
+300/300 [==============================] - 0s 516us/step - loss: 0.1660 - accuracy: 0.9500
+Epoch 6/10
+300/300 [==============================] - 0s 527us/step - loss: 0.0917 - accuracy: 0.9700
+Epoch 7/10
+300/300 [==============================] - 0s 516us/step - loss: 0.1127 - accuracy: 0.9667
+Epoch 8/10
+300/300 [==============================] - 0s 507us/step - loss: 0.1118 - accuracy: 0.9600
+Epoch 9/10
+300/300 [==============================] - 0s 526us/step - loss: 0.1076 - accuracy: 0.9500
+Epoch 10/10
+300/300 [==============================] - 0s 487us/step - loss: 0.0840 - accuracy: 0.9800
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;tensorflow.python.keras.callbacks.History at 0x7f340807ac10&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predict</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">X</span><span class="p">:</span> <span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;.</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">mlutils</span><span class="o">.</span><span class="n">plot_2Ddata_with_boundary</span><span class="p">(</span><span class="n">predict</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.522575, 0.477425)
+</pre></div>
+</div>
+<img alt="../_images/NOTES 07.04 - NEURAL NETWORKS WITH TENSORFLOW_12_1.png" src="../_images/NOTES 07.04 - NEURAL NETWORKS WITH TENSORFLOW_12_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="cross-entropy-multiclass-classification">
+<h2>Cross entropy - multiclass classification<a class="headerlink" href="#cross-entropy-multiclass-classification" title="Permalink to this headline">¶</a></h2>
+<p>follow <a class="reference external" href="https://www.tensorflow.org/tutorials/keras/classification">THIS EXAMPLE</a> in TensorFlow doc site. Observe that:</p>
+<ul class="simple">
+<li><p>labels corresponding to a 10-class classification problem</p></li>
+<li><p>the network contains 10 output neurons, one per output class</p></li>
+<li><p>the loss function is <code class="docutils literal notranslate"><span class="pre">SparseCategoricalCrossEntropy</span></code></p></li>
+</ul>
+<p>Observe how <strong>cross entropy</strong> works with 4 classes:</p>
+<ul class="simple">
+<li><p>first we convert the output to a one-hot encoding</p></li>
+<li><p>we create a network with two output neurons with sigmoid activation</p></li>
+<li><p>interpret each neuron’s output as elements of a probability distribution</p></li>
+<li><p>normalize the probability distribution (must add up to one)</p></li>
+<li><p>we consider network output is better when it yields more probability to the correct class</p></li>
+</ul>
+<p><strong>expected classes for five data points</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 1, 2, 0, 3])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>convert it to one hot encoding</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_ohe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)[</span><span class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">y_ohe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 0, 0, 1],
+       [0, 1, 0, 0],
+       [0, 0, 1, 0],
+       [1, 0, 0, 0],
+       [0, 0, 0, 1]])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>simulate some neural network output with NO ACTIVATION function</strong></p>
+<p>with 10 output neurons, so for each input element (we have five) we have 4 outputs.</p>
+<p>this is called <strong>LOGITS</strong> in Tensorflow</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_hat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">y_ohe</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">y_hat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.06, -0.31, -0.95,  0.39],
+       [ 0.92, -0.48, -0.08,  0.53],
+       [-0.5 ,  0.22, -0.18,  1.81],
+       [-0.49, -1.41,  0.09, -0.11],
+       [-0.73,  0.26, -1.63, -0.68]])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>normalize LOGITS</strong>. This is the <strong>SOFTMAX function</strong></p>
+<p><strong>LOGITS</strong>  obtained from network last layer with no activation</p>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{y}}^{(i)} = [\hat{y}^{(i)}_0, \hat{y}^{(i)}_1,...,\hat{y}^{(i)}_9]\]</div>
+<p><strong>SOFTMAX ACTIVATION</strong></p>
+<div class="math notranslate nohighlight">
+\[\hat{\bar{\mathbf{y}}}^{(i)} = [\hat{\bar{y}}^{(i)}_0, \hat{\bar{y}}^{(i)}_1,...,\hat{\bar{y}}^{(i)}_9]\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[\hat{\bar{y}}^{(i)}_k = \frac{e^{\hat{y}^{(i)}_k}}{\sum_{j=0}^9e^{\hat{y}^{(i)}_j}}\]</div>
+<p>this ensures:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sum_{k=0}^9 \hat{\bar{y}}^{(i)}_k=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 \le \hat{\bar{y}}^{(i)}_k \le 1\)</span></p></li>
+</ul>
+<p>this way, for each input we have a nice probability distribution in its outputs.</p>
+<p>This is implemented in <strong>Tensorflow</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_hatb</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">y_hat</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+<span class="n">y_hatb</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.29019814, 0.20044982, 0.10569567, 0.40365637],
+       [0.43638904, 0.10761221, 0.16053855, 0.2954602 ],
+       [0.06893706, 0.14162659, 0.09493514, 0.69450122],
+       [0.21519991, 0.08576126, 0.38435531, 0.31468351],
+       [0.19420963, 0.52266365, 0.07895974, 0.20416697]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>check sums</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_hatb</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1., 1., 1., 1., 1.])
+</pre></div>
+</div>
+</div>
+</div>
+<p>how would you now measure how closely <code class="docutils literal notranslate"><span class="pre">y_hatb</span></code> is to the expected output on <code class="docutils literal notranslate"><span class="pre">y_ohe</span></code>?</p>
+<p><strong>cross entropy</strong>: just take the probability assigned to the correct class (and pass it through a log function)</p>
+<div class="math notranslate nohighlight">
+\[\text{loss}(\bar{\mathbf{y}}^{(i)}, \hat{\bar{\mathbf{y}}}^{(i)}) = -\sum_{k=0}^9 \bar{y}^{(i)}_k\log(\hat{\bar{y}}^{(i)}_k)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{\mathbf{y}}^{(i)}\)</span> is the one-hot encoding of the expected class (label) for data point <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>observe that,</p>
+<ul class="simple">
+<li><p>in the one-hot encoding <span class="math notranslate nohighlight">\(\bar{\mathbf{y}}^{(i)}\)</span> only one of the elements will be 1, and the rest will be 0’s, so the sumation above is only taking the log of the probability of the correct label.</p></li>
+<li><p>the negative sign accounts for logs of values &lt;1 are negative and we will later want to <strong>minimize</strong> the loss</p></li>
+</ul>
+<p>This is implemented in <strong>Tensorflow</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">categorical_crossentropy</span><span class="p">(</span><span class="n">y_ohe</span><span class="p">,</span> <span class="n">y_hatb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;tf.Tensor: shape=(5,), dtype=float64, numpy=array([0.90719134, 2.22922115, 2.35456137, 1.53618786, 1.58881713])&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observe that TensorFlow also implements the corresponding <strong>sparse</strong> convenience function that works directly with our labels</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">sparse_categorical_crossentropy</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_hatb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;tf.Tensor: shape=(5,), dtype=float64, numpy=array([0.90719134, 2.22922115, 2.35456137, 1.53618786, 1.58881713])&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "p38"
+        },
+        kernelOptions: {
+            kernelName: "p38",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'p38'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Raúl Ramos / Universidad de Antioquia<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
+    
+  </body>
+</html>

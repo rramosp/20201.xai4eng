@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LAB 07.01 - Optimization for ML &#8212; 20201 Inteligencia Artificial para Ciencias e Ingenierías</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">20201 Inteligencia Artificial para Ciencias e Ingenierías</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Información del curso
+  </a>
+ </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/LAB 07.01 - OPTIMIZATION FOR ML.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rramosp/x20201.ai4eng/blob/master/content/LAB 07.01 - OPTIMIZATION FOR ML.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataset">
+   Dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-create-a-prediction-function">
+   Task 1: Create a prediction function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-2-create-the-loss-function">
+   Task 2: Create the loss function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-3-obtain-the-best-theta-and-b-with-black-box-optimization">
+   Task 3: Obtain the best
+   <span class="math notranslate nohighlight">
+    \(\theta\)
+   </span>
+   and
+   <span class="math notranslate nohighlight">
+    \(b\)
+   </span>
+   with black box optimization
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lab-07-01-optimization-for-ml">
+<h1>LAB 07.01 - Optimization for ML<a class="headerlink" href="#lab-07-01-optimization-for-ml" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget --no-cache -O init.py -q https://raw.githubusercontent.com/rramosp/20201.ai4eng/master/init.py
+<span class="kn">import</span> <span class="nn">init</span><span class="p">;</span> <span class="n">init</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">force_download</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span> <span class="n">init</span><span class="o">.</span><span class="n">get_weblink</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">local.lib.rlxmoocapi</span> <span class="kn">import</span> <span class="n">submit</span><span class="p">,</span> <span class="n">session</span>
+<span class="n">student</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">Session</span><span class="p">(</span><span class="n">init</span><span class="o">.</span><span class="n">endpoint</span><span class="p">)</span><span class="o">.</span><span class="n">login</span><span class="p">(</span> <span class="n">course_id</span><span class="o">=</span><span class="n">init</span><span class="o">.</span><span class="n">course_id</span><span class="p">,</span> 
+                                                <span class="n">session_id</span><span class="o">=</span><span class="s2">&quot;UDEA&quot;</span><span class="p">,</span> 
+                                                <span class="n">lab_id</span><span class="o">=</span><span class="s2">&quot;L07.01&quot;</span> <span class="p">)</span>
+<span class="n">init</span><span class="o">.</span><span class="n">get_weblink</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_moons</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">local.lib</span> <span class="kn">import</span> <span class="n">mlutils</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="dataset">
+<h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
+<p>you have data in a matrix <span class="math notranslate nohighlight">\(\mathbf{X} \in \mathbb{R}^{m\times n}\)</span> and the corresponding labels <span class="math notranslate nohighlight">\(\mathbf{y} \in \mathbb{R}^m\)</span>.</p>
+<p>each row in matrix <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> contains one data point <span class="math notranslate nohighlight">\(\mathbf{x}^{(i)}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+ x^{(0)}\\
+ x^{(1)}\\
+ ... \\
+ x^{(m-1)} 
+\end{bmatrix}
+\end{split}\]</div>
+<p>and each data point is a vector <span class="math notranslate nohighlight">\(\mathbf{x}^{(i)}=[x^{(i)}_0, x^{(i)}_1,...,x^{(i)}_{n-1}]\)</span>.</p>
+<p>Also, each data point has an associated label <span class="math notranslate nohighlight">\(\mathbf{y} = [y^{(0)}, y^{(1)},..., y^{(m-1)}]\)</span>.</p>
+<p>We will be doing <strong>binary classification</strong> so <span class="math notranslate nohighlight">\(y^{(0)}\in \{0,1\}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;local/data/moons.csv&quot;</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">d</span><span class="p">[[</span><span class="s2">&quot;col1&quot;</span><span class="p">,</span> <span class="s2">&quot;col2&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;m=</span><span class="si">%d</span><span class="se">\n</span><span class="s2">n=</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m=200
+n=2
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((200, 2), (200,))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">X</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">y</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.303374   -0.81478084]
+ [-0.98727894 -0.06456482]
+ [ 2.317555    0.44925394]
+ [ 0.85310268 -0.22083508]
+ [-0.97006406  0.64095693]
+ [ 1.65849049 -0.2342485 ]
+ [ 0.8684624  -0.28940167]
+ [ 0.05631143  0.00296565]
+ [ 0.88824669 -0.12888889]
+ [ 0.9925954   0.31451716]]
+[1 0 1 1 0 1 1 1 1 0]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">][</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">][</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;class 0&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">][</span><span class="n">y</span><span class="o">==</span><span class="mi">1</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">][</span><span class="n">y</span><span class="o">==</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;class 1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LAB 07.01 - OPTIMIZATION FOR ML_7_0.png" src="../_images/LAB 07.01 - OPTIMIZATION FOR ML_7_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="task-1-create-a-prediction-function">
+<h2>Task 1: Create a prediction function<a class="headerlink" href="#task-1-create-a-prediction-function" title="Permalink to this headline">¶</a></h2>
+<p><strong>complete the following prediction function</strong> which accepts:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{\theta} = [\theta_0, \theta_1,... \theta_{n-1}] \in \mathbb{R}^n\)</span>, a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> vector.</p></li>
+<li><p><span class="math notranslate nohighlight">\(b  \in \mathbb{R}\)</span> , a <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{X} \in \mathbb{R}^{m\times n}\)</span>, a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 2D array.</p></li>
+</ul>
+<p>and returns</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\mathbf{y}} = [\hat{y}^{(0)}, \hat{y}^{(1)}, ..., \hat{y}^{(m-1)}] \in \mathbb{R}^m\)</span> defined as follows</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\hat{y}^{(i)} = \text{sigm}(\mathbf{\theta} \cdot \mathbf{x}^{(i)} + b) = \text{sigm}(\theta_0 x^{(i)}_0 + \theta_1 x^{(i)}_1 + b)\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[\text{sigm}(z) = \frac{1}{1+e^{-z}}\]</div>
+<p>note that we can also express the prediction vector <span class="math notranslate nohighlight">\(\hat{\mathbf{y}}\)</span> over the whole dataset as</p>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{y}} = \text{sigm}(\mathbf{\theta} \cdot \mathbf{X} + b)\]</div>
+<p>observe that for any <span class="math notranslate nohighlight">\(z\)</span>, the sigmoid function squeshes its value between 0 and 1. It can  be simply seen as a continuous <strong>step</strong> function which converts any negative value into 0, and any positive value into 1.</p>
+<p><strong>challenge</strong>: use only one line of python code (not counting the <span class="math notranslate nohighlight">\(\text{sigm}\)</span> definition)</p>
+<p><strong>warn</strong>: your function must work with any <span class="math notranslate nohighlight">\(\mathbf{X} \in \mathbb{R}^{m\times n}\)</span> and  <span class="math notranslate nohighlight">\(\mathbf{\theta} \in \mathbb{R}^n\)</span>, for any <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, not only for <span class="math notranslate nohighlight">\(n=2\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">sigm</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">sigm</span><span class="p">(</span><span class="n">z</span><span class="p">));</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;sigm(z)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7f23f42aedd0&gt;
+</pre></div>
+</div>
+<img alt="../_images/LAB 07.01 - OPTIMIZATION FOR ML_9_1.png" src="../_images/LAB 07.01 - OPTIMIZATION FOR ML_9_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prediction</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">X</span><span class="p">):</span>
+    <span class="n">sigm</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">))</span>    
+    <span class="n">yhat</span> <span class="o">=</span> <span class="o">....</span> <span class="c1"># YOUR CODE HERE</span>
+    <span class="k">return</span> <span class="n">yhat</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>check manually your code. The following should yield a vector with 200 elements, whose sum should be 99.97 at its four first elements</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[0.02328672 0.91257015 0.03781132 0.16139629 ... ]
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]],</span> <span class="mf">0.5</span>
+<span class="n">yhat</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">X</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">yhat</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">yhat</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">yhat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>submit your code</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student</span><span class="o">.</span><span class="n">submit_task</span><span class="p">(</span><span class="nb">globals</span><span class="p">(),</span> <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;task_01&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="task-2-create-the-loss-function">
+<h2>Task 2: Create the loss function<a class="headerlink" href="#task-2-create-the-loss-function" title="Permalink to this headline">¶</a></h2>
+<p>accepting the following paramters</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{\theta} = [\theta_0, \theta_1] \in \mathbb{R}^n\)</span>, a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> vector.</p></li>
+<li><p><span class="math notranslate nohighlight">\(b  \in \mathbb{R}\)</span> , a <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{X} \in \mathbb{R}^{m\times n}\)</span>, a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 2D array.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{y} \in \mathbb{R}^m\)</span>, a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> vector.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\text{loss}(\theta, b, \mathbf{X} , \mathbf{y}) = \frac{1}{m}\sum_{i=0}^{m-1}(\hat{y}^{(i)}-y^{(i)})^2\]</div>
+<p><strong>challenge</strong>: use only one line of python (not counting the <code class="docutils literal notranslate"><span class="pre">sigm</span></code> and <code class="docutils literal notranslate"><span class="pre">prediction</span></code> functions).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">loss</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">sigm</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">))</span>        
+    <span class="n">result</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>check manually your code, you should get a loss of 0.664 approx.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]],</span> <span class="mf">0.5</span>
+<span class="n">loss</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>submit your code</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student</span><span class="o">.</span><span class="n">submit_task</span><span class="p">(</span><span class="nb">globals</span><span class="p">(),</span> <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;task_02&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="task-3-obtain-the-best-theta-and-b-with-black-box-optimization">
+<h2>Task 3: Obtain the best <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(b\)</span> with black box optimization<a class="headerlink" href="#task-3-obtain-the-best-theta-and-b-with-black-box-optimization" title="Permalink to this headline">¶</a></h2>
+<p>Complete the following function so that it returns the best <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(b\)</span> for a given data set.</p>
+<p>Observe that</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x0</span></code> in <code class="docutils literal notranslate"><span class="pre">scipy.optimize.minimize</span></code> must be a vector of three items, the first two corresponding to <span class="math notranslate nohighlight">\(\theta_0\)</span> and <span class="math notranslate nohighlight">\(\theta_1\)</span>, and the last one to <span class="math notranslate nohighlight">\(b\)</span>.</p></li>
+<li><p>the return value of the optimizer <code class="docutils literal notranslate"><span class="pre">r.x</span></code> will also contain three items, and you will have to separate the first two into <code class="docutils literal notranslate"><span class="pre">t</span></code> and the last one into <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
+<li><p>you will have to adapt your <code class="docutils literal notranslate"><span class="pre">loss</span></code> function created before so that it extracts <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(b\)</span> from the variable <code class="docutils literal notranslate"><span class="pre">params</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
+    
+    <span class="k">def</span> <span class="nf">loss</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># extract t from params</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># extract b params</span>
+        <span class="n">sigm</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">))</span>        
+        <span class="k">return</span> <span class="o">...</span> <span class="c1"># your code here</span>
+    
+    <span class="n">tinit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># keep this initialization</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="c1"># complete the call to minimize</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># extract t from r.x</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># extract b from r.x</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>check manually your code, you should get an accuracy of about 84%-87%, and a classification frontier similar to this one.</p>
+<p><strong>Observe</strong> how we convert the sigmoid output which can be any number <span class="math notranslate nohighlight">\(\in [0,1]\)</span>, into a discrete classification (0 or 1) by thresholding on 0.5</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;local/imgs/logregmoons.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LAB 07.01 - OPTIMIZATION FOR ML_30_0.png" src="../_images/LAB 07.01 - OPTIMIZATION FOR ML_30_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mlutils</span><span class="o">.</span><span class="n">plot_2Ddata_with_boundary</span><span class="p">(</span><span class="k">lambda</span> <span class="n">X</span><span class="p">:</span> <span class="n">prediction</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">X</span><span class="p">)</span><span class="o">&gt;.</span><span class="mi">5</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="p">(</span><span class="n">prediction</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">X</span><span class="p">)</span><span class="o">&gt;.</span><span class="mi">5</span><span class="p">)</span><span class="o">==</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;accuracy </span><span class="si">%.3f</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">acc</span>)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>submit your code</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student</span><span class="o">.</span><span class="n">submit_task</span><span class="p">(</span><span class="nb">globals</span><span class="p">(),</span> <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;task_03&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Raúl Ramos / Universidad de Antioquia<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
+    
+  </body>
+</html>
