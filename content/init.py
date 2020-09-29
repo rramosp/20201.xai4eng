@@ -1,4 +1,4 @@
-course_id = '20201.ai4eng'
+course_id = '20201.xai4eng'
 github_repo = 'rramosp/%s'%course_id
 zip_file_url="https://github.com/%s/archive/master.zip"%github_repo
 endpoint = 'https://m5knaekxo6.execute-api.us-west-2.amazonaws.com/dev-v0001/rlxmooc'
