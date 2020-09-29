@@ -1,0 +1,17 @@
+# Book settings
+# template from https://github.com/executablebooks/github-action-demo
+title: 20201 Inteligencia Artificial para Ciencias e Ingenierías
+author: Raúl Ramos / Universidad de Antioquia
+logo: content/logo.png
+
+repository:
+   url: https://github.com/rramosp/x20201.ai4eng
+   branch: master
+
+launch_buttons:
+  binderhub_url: ""
+  colab_url: https://colab.research.google.com
+
+execute:
+  execute_notebooks         : off
+
