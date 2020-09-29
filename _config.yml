@@ -2,7 +2,7 @@
 # template from https://github.com/executablebooks/github-action-demo
 title: 20201 Inteligencia Artificial para Ciencias e Ingenierías
 author: Raúl Ramos / Universidad de Antioquia
-logo: content/logo.png
+logo: content/local/imgs/fudea.jpg
 
 repository:
    url: https://github.com/rramosp/20201.xai4eng
