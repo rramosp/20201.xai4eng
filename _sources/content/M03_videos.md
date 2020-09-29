@@ -1,5 +1,6 @@
 # VIDEO CLASSES
 
+
 - **3.01 - Flujo de trabajo de Machine Learning** [Video 10mins](https://www.youtube.com/watch?v=VicKyzFGBM0) - Explicamos el flujo de trabajo general que se realiza al desarrollar modelos de Machine Learning.
 
 - **3.02 - Calibración de un modelo 1D** [Video 20mins](https://www.youtube.com/watch?v=sqU23q_7X5M) - Describimos el proceso de calibración manual y analítica de un modelo muy sencillo .
@@ -18,7 +19,6 @@
 
 - **3.09 - Algoritmos supervisados. Support Vector Machines** [Video 12mins](https://www.youtube.com/watch?v=dYGW7MDgS40) - Explicamos la idea de transformación de características y la intuición y utilización de las máquinas de soporte vectorial para clasificación.
 
-- **LAB 03.01 - MODEL GENERATION** [Video* 16mins](https://youtu.be/trD-zmv6Rww) - Desarrollamos un algoritmo muy sencillo para calibrar un modelo lineal.
+- **LAB 03.01 - MODEL GENERATION** [Video 16mins](https://www.youtube.com/watch?v=Zj77iukp1LU) - Desarrollamos un algoritmo muy sencillo para calibrar un modelo lineal.
 
-- **LAB 03.02 - TIME SERIES MODEL** [Video* 16mins](https://youtu.be/y6KNspJuEO0) - Creamos un dataset desde una serie temporal, aplicamos un modelo de regresión lineal y medimos su desempeño.
-
+- **LAB 03.02 - TIME SERIES MODEL** [Video 16mins](https://www.youtube.com/watch?v=Ts1VXW30hn8) - Creamos un dataset desde una serie temporal, aplicamos un modelo de regresión lineal y medimos su desempeño.
