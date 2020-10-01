@@ -1,5 +1,6 @@
-course_id = '20201.xai4eng'
-github_repo = 'rramosp/%s'%course_id
+course_id = '20201.ai4eng'
+github_id = '20201.xai4eng'
+github_repo = 'rramosp/%s'%github_id
 zip_file_url="https://github.com/%s/archive/master.zip"%github_repo
 endpoint = 'https://m5knaekxo6.execute-api.us-west-2.amazonaws.com/dev-v0001/rlxmooc'
 #endpoint = 'http://localhost:5000/rlxmooc'
@@ -19,7 +20,7 @@ def init(force_download=False):
 
     if force_download or not os.path.exists("local"):
         print("replicating local resources")
-        dirname = course_id+"-master/"
+        dirname = github_id+"-master/"
         if os.path.exists(dirname):
             shutil.rmtree(dirname)
         r = requests.get(zip_file_url)
