@@ -12,6 +12,9 @@ launch_buttons:
   binderhub_url: ""
   colab_url: https://colab.research.google.com
 
+html:
+  google_analytics_id: "UA-43235448-2"
+
 execute:
   execute_notebooks         : off
 
