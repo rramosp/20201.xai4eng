@@ -374,6 +374,9 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_7_0.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_7_0.png" />
+</div>
 </div>
 <p>pseudo código</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>input: 
@@ -394,6 +397,8 @@ algoritmo:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/BVFG7fd1H30" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div>
 </div>
 </div>
 <div class="section" id="metodos-basados-en-centroides-kmeans">
@@ -405,10 +410,29 @@ algoritmo:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(500, 2)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[16.06479619, 15.64135085],
+       [23.136145  , 13.27029397],
+       [21.2907726 , 25.33499533],
+       [24.4739302 , 24.28665806],
+       [16.29365483, 17.15224079],
+       [24.3799962 , 21.6928672 ],
+       [22.96399174, 13.7776461 ],
+       [14.59797792, 16.23800883],
+       [21.68532999, 18.31450552],
+       [21.74355998, 23.70715595]])
 </pre></div>
 </div>
 </div>
@@ -424,6 +448,11 @@ algoritmo:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(500,)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -431,10 +460,23 @@ algoritmo:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    392
+1    108
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">km</span><span class="o">.</span><span class="n">cluster_centers_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[19.5061742 , 14.31526768],
+       [23.01615594, 24.85357474]])
 </pre></div>
 </div>
 </div>
@@ -460,6 +502,9 @@ algoritmo:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_16_0.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_16_0.png" />
+</div>
 </div>
 <p>observa cómo KMeans agrupa datos en 2D con diferentes números de clusters</p>
 <div class="cell docutils container">
@@ -468,6 +513,12 @@ algoritmo:
 <span class="n">mlutils</span><span class="o">.</span><span class="n">experiment_number_of_clusters</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">KMeans</span><span class="p">(),</span> <span class="n">show_metric</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100% (8 of 8) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+</pre></div>
+</div>
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_18_1.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_18_1.png" />
 </div>
 </div>
 <div class="section" id="exerimenta-con-distintos-datasets-sinteticos">
@@ -483,12 +534,24 @@ algoritmo:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f5550823490&gt;
+</pre></div>
+</div>
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_20_1.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_20_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mlutils</span><span class="o">.</span><span class="n">experiment_number_of_clusters</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">KMeans</span><span class="p">(),</span> <span class="n">show_metric</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100% (8 of 8) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+</pre></div>
+</div>
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_21_1.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_21_1.png" />
 </div>
 </div>
 </div>
@@ -500,6 +563,12 @@ algoritmo:
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f554ee91d10&gt;
+</pre></div>
+</div>
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_23_1.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_23_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -598,6 +667,13 @@ algoritmo:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_25_0.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_25_0.png" />
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_25_1.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_25_1.png" />
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_25_2.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_25_2.png" />
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_25_3.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_25_3.png" />
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_25_4.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_25_4.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -606,12 +682,25 @@ algoritmo:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f93d8486f90&gt;
+</pre></div>
+</div>
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_26_1.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_26_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">silhouette_analysis</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_27_0.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_27_0.png" />
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_27_1.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_27_1.png" />
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_27_2.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_27_2.png" />
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_27_3.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_27_3.png" />
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_27_4.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_27_4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -620,6 +709,12 @@ algoritmo:
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f554ee015d0&gt;
+</pre></div>
+</div>
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_29_1.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_29_1.png" />
 </div>
 </div>
 <p>son <strong><em>naturales</em></strong> los clusters formados con los siguientes datos?</p>
@@ -630,12 +725,18 @@ algoritmo:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_31_0.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_31_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mlutils</span><span class="o">.</span><span class="n">plot_cluster_predictions</span><span class="p">(</span><span class="n">KMeans</span><span class="p">(),</span> <span class="n">X</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">bwr</span><span class="p">,</span> <span class="n">show_metric</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_32_0.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_32_0.png" />
 </div>
 </div>
 </div>
@@ -652,6 +753,9 @@ algoritmo:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_34_0.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_34_0.png" />
+</div>
 </div>
 <p>muy sensible a <span class="math notranslate nohighlight">\(\epsilon\)</span>. observa también que la métrica de silueta es muy sensible a los outliers.</p>
 <div class="cell docutils container">
@@ -664,6 +768,9 @@ algoritmo:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_36_0.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_36_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -674,6 +781,9 @@ algoritmo:
                                      <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">plasma</span><span class="p">,</span> <span class="n">show_metric</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title_str</span><span class="o">=</span><span class="s2">&quot;, eps=</span><span class="si">%.2f</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">eps</span>)
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_37_0.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_37_0.png" />
 </div>
 </div>
 </div>
@@ -703,10 +813,22 @@ algoritmo:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.7736222302611765, 1.344908685522608)
+</pre></div>
+</div>
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_40_1.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_40_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">knn_graph</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;500x500 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;
+	with 25000 stored elements in Compressed Sparse Row format&gt;
 </pre></div>
 </div>
 </div>
@@ -723,12 +845,29 @@ algoritmo:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_43_0.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_43_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">knn_graph</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">k</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(500, 500)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>matrix([[0., 0., 1., ..., 0., 0., 0.],
+        [0., 0., 0., ..., 0., 0., 0.],
+        [1., 0., 0., ..., 0., 0., 0.],
+        ...,
+        [0., 0., 0., ..., 0., 0., 0.],
+        [0., 0., 0., ..., 0., 0., 0.],
+        [0., 0., 0., ..., 0., 0., 0.]])
 </pre></div>
 </div>
 </div>
@@ -746,6 +885,9 @@ algoritmo:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_46_0.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_46_0.png" />
+</div>
 </div>
 <p>y a distintos niveles de ruido en el dataset</p>
 <div class="cell docutils container">
@@ -760,6 +902,9 @@ algoritmo:
                                      <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">plasma</span><span class="p">,</span> <span class="n">show_metric</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title_str</span><span class="o">=</span><span class="s2">&quot;, noise=</span><span class="si">%.2f</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">noise</span>)
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_48_0.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_48_0.png" />
 </div>
 </div>
 </div>
@@ -781,6 +926,9 @@ algoritmo:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_50_0.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_50_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -792,12 +940,22 @@ algoritmo:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_51_0.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_51_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">silhouette_analysis</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_52_0.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_52_0.png" />
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_52_1.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_52_1.png" />
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_52_2.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_52_2.png" />
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_52_3.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_52_3.png" />
+<img alt="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_52_4.png" src="../_images/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING_52_4.png" />
 </div>
 </div>
 </div>

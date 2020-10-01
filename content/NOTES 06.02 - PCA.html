@@ -322,6 +322,15 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(200, 2)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fa907e03890&gt;
+</pre></div>
+</div>
+<img alt="../_images/NOTES 06.02 - PCA_5_2.png" src="../_images/NOTES 06.02 - PCA_5_2.png" />
+</div>
 </div>
 <p>recuerda que la proyección de un vector <span class="math notranslate nohighlight">\(\vec{x}\)</span> en otro vector <span class="math notranslate nohighlight">\(\vec{v}\)</span> (consulta <a class="reference external" href="https://matthew-brett.github.io/teaching/vector_projection.html">here</a>) viene dada por:</p>
 <div class="math notranslate nohighlight">
@@ -358,6 +367,9 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.02 - PCA_7_0.png" src="../_images/NOTES 06.02 - PCA_7_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="encontremos-las-proyecciones-con-mayor-y-menor-std-por-fuerza-bruta">
@@ -383,6 +395,12 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0,0.5,&#39;projection std&#39;)
+</pre></div>
+</div>
+<img alt="../_images/NOTES 06.02 - PCA_9_1.png" src="../_images/NOTES 06.02 - PCA_9_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -396,6 +414,12 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;center left&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="o">.</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa907afc450&gt;
+</pre></div>
+</div>
+<img alt="../_images/NOTES 06.02 - PCA_10_1.png" src="../_images/NOTES 06.02 - PCA_10_1.png" />
 </div>
 </div>
 <p><strong>estos son los componentes principales</strong>!! <strong>observa que su dimensionalidad es la misma que los datos originales</strong></p>
@@ -413,12 +437,228 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sklearn PCA components
+[[-0.94446029 -0.32862557]]
+brute force components
+[-0.93969262 -0.34202014]
+[-0.32706796  0.94500082]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(200, 1)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 6.76769235e-01],
+       [-1.07121393e+00],
+       [ 7.27912364e-01],
+       [ 2.30964136e+00],
+       [ 6.30052323e-01],
+       [ 1.02448887e+00],
+       [ 7.77183507e-01],
+       [-1.39656414e+00],
+       [-2.91049874e-01],
+       [ 1.88864221e+00],
+       [-7.11544293e-01],
+       [ 6.38884130e-01],
+       [ 5.48059617e-01],
+       [-2.19312436e-01],
+       [-3.87789490e-01],
+       [ 7.15219956e-01],
+       [-1.08373816e+00],
+       [-2.99917403e-01],
+       [-7.96849021e-01],
+       [-8.12568346e-01],
+       [-1.54018281e+00],
+       [-2.52920476e-01],
+       [ 6.26464454e-01],
+       [-1.61007571e+00],
+       [ 5.04240563e-01],
+       [ 5.53935753e-01],
+       [ 6.81911252e-01],
+       [-2.00157228e-02],
+       [ 1.13550833e-01],
+       [ 2.92286085e-02],
+       [-2.14393483e-01],
+       [-1.03406124e+00],
+       [ 3.88635004e-01],
+       [ 9.96727811e-01],
+       [ 1.39223653e+00],
+       [ 4.57043694e-01],
+       [ 6.81839901e-01],
+       [-9.05233246e-01],
+       [ 4.94316334e-01],
+       [ 6.22411280e-01],
+       [ 3.26088548e-01],
+       [ 4.52560386e-01],
+       [ 6.81840663e-01],
+       [-2.44832816e-01],
+       [-5.27149562e-01],
+       [-4.51448737e-01],
+       [-1.42864453e+00],
+       [ 8.05233004e-01],
+       [ 1.81049742e-01],
+       [ 3.49039347e-01],
+       [ 2.65803583e+00],
+       [-1.34272221e+00],
+       [-1.73026340e-01],
+       [ 6.13676729e-01],
+       [-1.89940741e+00],
+       [-7.93074429e-01],
+       [-4.17072486e-01],
+       [ 1.54913526e-01],
+       [ 2.44646603e-01],
+       [ 7.26337140e-01],
+       [-7.91592424e-01],
+       [ 4.39666794e-01],
+       [-2.66630687e-01],
+       [-8.77131636e-01],
+       [-6.37447634e-01],
+       [-7.72982393e-01],
+       [-1.04616382e+00],
+       [ 1.15209837e+00],
+       [-5.26661400e-02],
+       [-9.74296354e-01],
+       [-6.24348505e-01],
+       [-1.00475074e+00],
+       [ 5.89973268e-01],
+       [ 1.50344054e+00],
+       [ 1.27433349e+00],
+       [-1.25658172e+00],
+       [ 1.37852445e-01],
+       [-1.36126475e+00],
+       [ 7.27518820e-01],
+       [ 4.50501231e-01],
+       [-1.17577071e-01],
+       [-8.49638130e-01],
+       [-9.51657336e-02],
+       [-1.81175961e-01],
+       [ 2.81596080e-01],
+       [-2.56560634e-01],
+       [ 8.52804745e-01],
+       [-4.77688980e-01],
+       [-2.96471868e-01],
+       [ 1.68108524e-03],
+       [-2.05727542e-01],
+       [ 8.12610001e-01],
+       [-7.06157363e-02],
+       [ 2.31690062e-01],
+       [-1.59605923e-01],
+       [-5.98727081e-01],
+       [ 1.01944512e+00],
+       [-7.01462226e-01],
+       [-1.40420099e+00],
+       [ 6.94997907e-01],
+       [ 5.18636606e-01],
+       [ 4.83061626e-01],
+       [ 6.79198052e-01],
+       [-1.30170017e+00],
+       [-2.71805220e-01],
+       [ 9.47603686e-01],
+       [-3.49630397e-01],
+       [ 4.85113462e-01],
+       [-3.04715098e-01],
+       [-3.31839520e-01],
+       [-1.38578436e+00],
+       [ 8.84502948e-01],
+       [-2.47084475e+00],
+       [-9.56899804e-02],
+       [-4.64806358e-01],
+       [ 7.06669625e-01],
+       [ 1.54312708e-01],
+       [ 5.45819213e-01],
+       [ 1.46023727e-01],
+       [ 9.57253276e-01],
+       [-6.91815248e-01],
+       [-1.00443516e-01],
+       [ 2.77924488e-01],
+       [-1.20207491e+00],
+       [-6.04953108e-02],
+       [-1.03273685e+00],
+       [ 6.88215760e-01],
+       [-1.21050656e+00],
+       [-2.40052449e-01],
+       [-6.06855334e-01],
+       [ 1.29217575e+00],
+       [-1.03282074e-01],
+       [-1.41361475e+00],
+       [ 7.57783205e-01],
+       [ 1.41360423e+00],
+       [ 1.99564613e+00],
+       [ 1.66865955e+00],
+       [ 1.66032125e+00],
+       [ 4.24742508e-01],
+       [-9.26445715e-01],
+       [ 3.28504629e-02],
+       [-5.17521702e-01],
+       [-9.24887775e-02],
+       [-3.05962249e-02],
+       [ 1.30795754e-01],
+       [-7.74659629e-02],
+       [-4.20826569e-01],
+       [ 6.78334448e-01],
+       [-6.35104074e-01],
+       [ 2.72075594e-01],
+       [-2.26801066e-01],
+       [-1.45908094e+00],
+       [ 4.03275391e-01],
+       [ 4.88618199e-01],
+       [-3.77797862e-02],
+       [ 2.25514691e-01],
+       [ 3.73320407e-01],
+       [ 9.96559672e-01],
+       [ 6.68655132e-01],
+       [-3.09207055e-01],
+       [ 1.44746288e+00],
+       [-1.27674147e-01],
+       [ 1.95898129e-02],
+       [-4.68331172e-01],
+       [-7.59794861e-01],
+       [ 2.11566325e+00],
+       [-1.28843614e+00],
+       [ 5.24455206e-01],
+       [ 2.68082969e-01],
+       [ 4.06271559e-02],
+       [-1.63087335e+00],
+       [ 4.50273668e-01],
+       [-1.41736985e+00],
+       [-3.20579341e-01],
+       [-2.16095416e+00],
+       [ 7.55938440e-01],
+       [ 1.13147728e+00],
+       [-4.01022769e-01],
+       [-1.33261395e-01],
+       [-1.20765775e-01],
+       [ 1.03185993e+00],
+       [-1.29878689e-01],
+       [-4.08011754e-01],
+       [ 4.17084437e-01],
+       [-1.00930809e-01],
+       [ 7.22839507e-02],
+       [ 6.47903117e-01],
+       [ 4.74689466e-01],
+       [ 6.85499472e-01],
+       [-1.49366216e+00],
+       [-3.49297457e-01],
+       [-7.79713261e-01],
+       [ 5.67446775e-01],
+       [ 5.18831382e-02],
+       [ 1.25350822e+00],
+       [-8.53016941e-01],
+       [-2.61547685e-01],
+       [-2.02667441e+00],
+       [ 1.20688282e+00],
+       [-3.53816725e-01]])
 </pre></div>
 </div>
 </div>
@@ -430,10 +670,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>144 µs ± 2.69 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> get_maxmin_projections(X)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1 ms ± 62.1 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -466,6 +716,12 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa905b33650&gt;
+</pre></div>
+</div>
+<img alt="../_images/NOTES 06.02 - PCA_18_1.png" src="../_images/NOTES 06.02 - PCA_18_1.png" />
+</div>
 </div>
 <p>y podemos también recontruir los datos 2D después de la transformación</p>
 <div class="cell docutils container">
@@ -478,6 +734,12 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;center left&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="o">.</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa907c51d90&gt;
+</pre></div>
+</div>
+<img alt="../_images/NOTES 06.02 - PCA_20_1.png" src="../_images/NOTES 06.02 - PCA_20_1.png" />
 </div>
 </div>
 </div>

@@ -330,12 +330,23 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dimension de las imagenes y las clases (1500, 784) (1500,)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span><span class="mi">28</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fa29c7058e0&gt;
+</pre></div>
+</div>
+<img alt="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_5_1.png" src="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_5_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -352,6 +363,9 @@
     <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_7_0.png" src="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_7_0.png" />
 </div>
 </div>
 </div>
@@ -377,11 +391,30 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((1500, 784), (1500, 10))
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
     <span class="nb">print</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="o">==</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 150
+1 157
+2 186
+3 125
+4 151
+5 138
+6 152
+7 154
+8 141
+9 146
 </pre></div>
 </div>
 </div>
@@ -395,6 +428,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((1050, 784), (450, 784), (1050,), (450,))
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -403,6 +441,11 @@
 <span class="n">dt</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
 <span class="n">dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtr</span><span class="p">,</span> <span class="n">ytr</span><span class="p">)</span>
 <span class="n">dt</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtr</span><span class="p">,</span> <span class="n">ytr</span><span class="p">),</span> <span class="n">dt</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xts</span><span class="p">,</span> <span class="n">yts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.72, 0.6177777777777778)
 </pre></div>
 </div>
 </div>
@@ -434,10 +477,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>......................................
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">dtr</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">dts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(38, 38)
 </pre></div>
 </div>
 </div>
@@ -452,11 +505,22 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f5316c9c790&gt;
+</pre></div>
+</div>
+<img alt="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_17_1.png" src="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_17_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">best_cs</span> <span class="o">=</span> <span class="n">cs</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dts</span><span class="p">)]</span>
 <span class="n">best_cs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60
 </pre></div>
 </div>
 </div>
@@ -478,6 +542,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.9047619047619048, 0.8355555555555556)
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="pipelines">
@@ -493,6 +562,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.9057142857142857, 0.8333333333333334)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -500,6 +574,11 @@
 <span class="n">pip</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s2">&quot;PCA&quot;</span><span class="p">,</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">best_cs</span><span class="p">)),</span> <span class="p">(</span><span class="s2">&quot;gaussian&quot;</span><span class="p">,</span> <span class="n">GaussianNB</span><span class="p">())])</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">pip</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span> <span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">%.2f</span><span class="s2"> +/- </span><span class="si">%.4f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">scores</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.84 +/- 0.0168
 </pre></div>
 </div>
 </div>
@@ -517,6 +596,9 @@
     <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]);</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_25_0.png" src="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_25_0.png" />
 </div>
 </div>
 </div>
@@ -545,6 +627,9 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_29_0.png" src="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_29_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="observa-la-nueva-representacion-de-la-primera-imagen">
@@ -555,10 +640,94 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0, 188, 255,  94,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0, 191, 250, 253,  93,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0, 123, 248, 253, 167,  10,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,  80, 247, 253, 208,  13,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,  29, 207, 253, 235,  77,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,  54, 209, 253, 253,  88,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,  93, 254, 253, 238, 170,
+        17,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,  23, 210, 254, 253,
+       159,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,  16, 209, 253,
+       254, 240,  81,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,  27,
+       253, 253, 254,  13,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+        20, 206, 254, 254, 198,   7,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0, 168, 253, 253, 196,   7,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,  20, 203, 253, 248,  76,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,  22, 188, 253, 245,  93,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0, 103, 253, 253, 191,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,  89, 240, 253, 195,  25,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,  15, 220, 253, 253,  80,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,  94, 253, 253,
+       253,  94,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,  89,
+       251, 253, 250, 131,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0, 214, 218,  95,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,   0])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-602.96544279,  709.91417575,   48.46393261,  -94.3578192 ,
+       -247.5969329 , -429.06089585, -197.60517121,  531.22635527,
+        439.83674877, -143.65598588, -350.95470187,  172.60373135,
+       -172.73696352, -281.72027853, -126.34179342,  161.73658414,
+        -81.78527347, -413.79147679,   47.59742414, -237.42715084,
+        223.18870607, -258.81025144,   43.07849287, -144.98480884,
+        -56.84875879,   15.95569482,  -37.29026752, -169.61029386,
+        290.04985091,  -18.09769242, -156.47270457,  115.19250934,
+        -92.38887583,   97.42047216, -165.2477172 ,  195.55535288,
+        202.84586027,   19.77436206, -103.13657262, -196.06966884,
+        124.32311744,   31.23761748,  -38.67664165,   35.31148678,
+         70.87604485,  186.20659945, -128.96485438,   66.94065907,
+       -149.08882182,  -46.65103309,   -4.09849795,  111.30817383,
+        -52.76418032,  -40.0893952 ,  -70.94692439, -105.78083452,
+        -23.79724802,  152.12095565,   59.00594154,    7.56383813])
 </pre></div>
 </div>
 </div>
@@ -583,6 +752,9 @@ s.t.&amp;\;W,H \in \mathbb{R}_+
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;local/imgs/nmf.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_35_0.png" src="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_35_0.png" />
 </div>
 </div>
 <div class="section" id="obtenemos-la-descomposicion">
@@ -609,10 +781,20 @@ s.t.&amp;\;W,H \in \mathbb{R}_+
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_38_0.png" src="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_38_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xn</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.        , 4.95514551, 0.        , 0.        ,
+       6.08083653, 1.91867923, 0.09777909, 0.        , 0.        ,
+       0.        , 8.73915575, 0.        , 3.50861945, 0.        ])
 </pre></div>
 </div>
 </div>
@@ -634,6 +816,9 @@ s.t.&amp;\;W,H \in \mathbb{R}_+
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_41_0.png" src="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_41_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="clasificamos-en-el-nuevo-espacio-de-representacion">
@@ -642,6 +827,12 @@ s.t.&amp;\;W,H \in \mathbb{R}_+
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">GaussianNB</span><span class="p">(),</span> <span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span> <span class="p">)))</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">GaussianNB</span><span class="p">(),</span> <span class="n">Xn</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span> <span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5953333333333334
+0.7733333333333333
 </pre></div>
 </div>
 </div>
@@ -656,10 +847,23 @@ s.t.&amp;\;W,H \in \mathbb{R}_+
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f5315e32190&gt;
+</pre></div>
+</div>
+<img alt="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_45_1.png" src="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_45_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.        , 4.95514551, 0.        , 0.        ,
+       6.08083653, 1.91867923, 0.09777909, 0.        , 0.        ,
+       0.        , 8.73915575, 0.        , 3.50861945, 0.        ])
 </pre></div>
 </div>
 </div>
@@ -674,6 +878,9 @@ s.t.&amp;\;W,H \in \mathbb{R}_+
     <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]);</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_47_0.png" src="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_47_0.png" />
 </div>
 </div>
 </div>
@@ -698,6 +905,9 @@ s.t.&amp;\;W,H \in \mathbb{R}_+
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_50_0.png" src="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_50_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -711,6 +921,9 @@ s.t.&amp;\;W,H \in \mathbb{R}_+
     <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]);</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_51_0.png" src="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_51_0.png" />
 </div>
 </div>
 <p>forzamos dispersión en los componentes, y extendemos el problema de optimización con la norma <span class="math notranslate nohighlight">\(L_1\)</span> en los componentes base.</p>
@@ -737,6 +950,12 @@ s.t.&amp;\;W,H \in \mathbb{R}_+
     <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]);</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14650.57060382788
+</pre></div>
+</div>
+<img alt="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_53_1.png" src="../_images/NOTES 06.03 - DIMENSIONALITY REDUCTION_53_1.png" />
 </div>
 </div>
 </div>

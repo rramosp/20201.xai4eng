@@ -344,6 +344,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>endpoint https://m5knaekxo6.execute-api.us-west-2.amazonaws.com/dev-v0001/rlxmooc
+</pre></div>
+</div>
+<div class="output text_html"><h3>See <a href='https://m5knaekxo6.execute-api.us-west-2.amazonaws.com/dev-v0001/rlxmooc/web/login' target='_blank'>my courses and progress</a></h2></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -389,6 +394,12 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>group A  [  96.08 101.76  89.45  88.81 106.66 105.94  95.99 108.45  94.67 114.32 ]  mean 100.21
+group B  [ 129.23 127.05 115.34 105.17 117.75 121.96 103.69 120.42 118.77  89.56 ]  mean 114.89
+</pre></div>
+</div>
+</div>
 </div>
 <p>if we look at these two sets of scores, how sure can we be that their respective populations are different (different <span class="math notranslate nohighlight">\(\mu\)</span>)?</p>
 <div class="section" id="define-a-test-statistic-to-measure-the-mean-difference-of-the-samples">
@@ -420,6 +431,12 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100% (3000 of 3000) |####################| Elapsed Time: 0:00:01 Time:  0:00:01
+100% (3000 of 3000) |####################| Elapsed Time: 0:00:01 Time:  0:00:01
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -433,6 +450,9 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/NOTES 04.04 - HYPOTHESIS TESTING - COMPARING SAMPLE MEANS_9_0.png" src="../_images/NOTES 04.04 - HYPOTHESIS TESTING - COMPARING SAMPLE MEANS_9_0.png" />
 </div>
 </div>
 </div>
@@ -462,6 +482,13 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>group A  [  96.08 101.76  89.45  88.81 106.66 105.94  95.99 108.45  94.67 114.32 ]  mean 100.21
+group B  [ 129.23 127.05 115.34 105.17 117.75 121.96 103.69 120.42 118.77  89.56 ]  mean 114.89
+</pre></div>
+</div>
+<img alt="../_images/NOTES 04.04 - HYPOTHESIS TESTING - COMPARING SAMPLE MEANS_11_1.png" src="../_images/NOTES 04.04 - HYPOTHESIS TESTING - COMPARING SAMPLE MEANS_11_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -473,6 +500,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>empirical (simulated) p-value 0.0013
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="which-corresponds-to-the-value-obtained-with-the-analytical-formula">
 <h4>which corresponds to the value obtained with the analytical formula<a class="headerlink" href="#which-corresponds-to-the-value-obtained-with-the-analytical-formula" title="Permalink to this headline">¶</a></h4>
@@ -480,6 +512,11 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.005726493310989277
 </pre></div>
 </div>
 </div>
@@ -525,6 +562,17 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100% (100 of 100) |######################| Elapsed Time: 0:00:00 Time:  0:00:00
+100% (100 of 100) |######################| Elapsed Time: 0:00:00 Time:  0:00:00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p_value mean error simulated/analytic 0.165
+p_value mean error when p_value&lt;0.05  0.004
+</pre></div>
+</div>
+<img alt="../_images/NOTES 04.04 - HYPOTHESIS TESTING - COMPARING SAMPLE MEANS_17_2.png" src="../_images/NOTES 04.04 - HYPOTHESIS TESTING - COMPARING SAMPLE MEANS_17_2.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -532,12 +580,34 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100% (1000 of 1000) |####################| Elapsed Time: 0:00:00 Time:  0:00:00
+100% (1000 of 1000) |####################| Elapsed Time: 0:00:00 Time:  0:00:00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p_value mean error simulated/analytic 0.172
+p_value mean error when p_value&lt;0.05  0.016
+</pre></div>
+</div>
+<img alt="../_images/NOTES 04.04 - HYPOTHESIS TESTING - COMPARING SAMPLE MEANS_18_2.png" src="../_images/NOTES 04.04 - HYPOTHESIS TESTING - COMPARING SAMPLE MEANS_18_2.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_simulations</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">6000</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100% (6000 of 6000) |####################| Elapsed Time: 0:00:02 Time:  0:00:02
+100% (6000 of 6000) |####################| Elapsed Time: 0:00:02 Time:  0:00:02
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p_value mean error simulated/analytic 0.168
+p_value mean error when p_value&lt;0.05  0.009
+</pre></div>
+</div>
+<img alt="../_images/NOTES 04.04 - HYPOTHESIS TESTING - COMPARING SAMPLE MEANS_19_2.png" src="../_images/NOTES 04.04 - HYPOTHESIS TESTING - COMPARING SAMPLE MEANS_19_2.png" />
 </div>
 </div>
 <p>For more info:</p>
