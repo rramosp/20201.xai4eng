@@ -27,7 +27,7 @@ def init(force_download=False):
         z.extractall()
         if os.path.exists("local"):
             shutil.rmtree("local")
-        shutil.move(dirname+"/local", "local")
+        shutil.move(dirname+"/content/local", "local")
         shutil.rmtree(dirname)
 
 def get_weblink():
