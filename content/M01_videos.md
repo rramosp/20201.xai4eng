@@ -2,8 +2,6 @@
 
 **1.01 - ¿Qué es la inteligencia artificial para tí?** [Video 14mins](https://www.youtube.com/watch?v=y3mRk4C9tpM)<br/>Desmitificamos el concepto de Inteligencia Artificial y te invitamos a reflexionar sobre el mismo.
 
-**1.01 - ¿Qué es la inteligencia artificial para tí?** [Video 14mins](https://www.youtube.com/watch?v=y3mRk4C9tpM)<br/>Desmitificamos el concepto de Inteligencia Artificial y te invitamos a reflexionar sobre el mismo.
-
 **1.02 - Ejemplos de aplicaciones de inteligencia artificial** [Video 19min](https://www.youtube.com/watch?v=javJB3_oQK4)<br/>Mostramos algunos ejemplos de aplicaciones y modelos realizados con técnicas de Machine Learning y analzamos ciertas consideraciones respecto a su dessarrollo y diseño.
 
 **1.03 - ¿Qué es un modelo derivado de los datos?** [Video 15mins](https://www.youtube.com/watch?v=k8S5OKEkKVI)<br/>Explicamos cómo las técnicas de Machine Learning generan modelos predictivos, a través de procesos calibración basados en datos anotados.
