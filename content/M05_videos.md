@@ -25,3 +25,10 @@
 **5.12 - Automatización de selección de modelos** [Video* 12 mins](https://youtu.be/ieq-jY7-FgQ)<br/>Completamos el ejemplo y automatizamos el proceso de selección.
 
 **5.13 - Monitoreo y producción** [Video* 13mins](https://youtu.be/Jvf773gYy5c)<br/>Simulamos el proceso de monitoreo de modelos en un entorno hipotético de producción y compartimos varias consideraciones al respecto.
+
+**5.14 - Participación en Kaggle** [Video* 21mins](https://youtu.be/kCj1hI-b7SA) <br/>Mostramos el proceso completo de participación en una competencia de Kaggle, desde la obtención de los datos hasta el envío de predicciones a la plataforma.
+
+**LAB 05.01 - Métricas de ML vs métricas de negocio** [Video* 13mins](https://youtu.be/HgTgk3-zJD8)<br/>En este laboratorio descubrimos la relación entre porcentaje de acierto y ganancia o pérdida simulando modelos predictivos de tendencias de precios de un cierto instrumento financiero.
+
+**LAB 05.02 - Data splits** [Video* 4mins](https://youtu.be/Us26LLI-S1g)<br/>El objetivo de este laboratorio es adquirir agilidad en la manipulación y partición de datasets para la implementación de procesos de validación de modelos predictivos.
+
