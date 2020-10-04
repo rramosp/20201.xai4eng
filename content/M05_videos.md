@@ -17,3 +17,11 @@
 **5.08 - Diagnóstico de modelos** [Video* 15mins](https://youtu.be/IJ3tfLboCyg)<br/>Explicamos cómo realizar un primer diagnóstico del desempeño de un modelo y las posibles acciones que pueden ayudar a mejorarlo. 
 
 **5.09 - Ejemplo de diagnóstico** [Video* 12mins](https://youtu.be/3tYVZxoumVk)<br/>Desarrollamos el diagnóstico de modelos con curvas de aprendizaje a través de un ejemplo práctico.   
+
+**5.10 - Selección de modelos: introducción** [Video* 16mins](https://youtu.be/EOpCF4ndIaI)<br/>Explicamos el proceso de selección de modelos, sus retos y necesidades.
+
+**5.11 - Ejemplo de selección de modelos** [Video* 16mins](https://youtu.be/5AXSzl0OJmo)<br/>Planteamos un ejemplo con varios modelos sobre los que hacer el proceso de selección.
+
+**5.12 - Automatización de selección de modelos** [Video* 12 mins](https://youtu.be/ieq-jY7-FgQ)<br/>Completamos el ejemplo y automatizamos el proceso de selección.
+
+**5.13 - Monitoreo y producción** [Video* 13mins](https://youtu.be/Jvf773gYy5c)<br/>Simulamos el proceso de monitoreo de modelos en un entorno hipotético de producción y compartimos varias consideraciones al respecto.
