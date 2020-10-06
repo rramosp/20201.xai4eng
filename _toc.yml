@@ -49,7 +49,7 @@
     - file: "content/NOTES 06.02 - PCA"
     - file: "content/NOTES 06.03 - DIMENSIONALITY REDUCTION"
     - file: "content/LAB 06.01 - CLUSTERING"
-    - file: "content/LAB 06.02 - DIMENSIONALITY REDUCTION"
+    - file: "content/LAB 06.02 - NMF face search"
 
 - file: content/M07_description
   sections:
