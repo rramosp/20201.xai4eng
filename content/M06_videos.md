@@ -20,3 +20,7 @@
 
 **6.10 - NMF para reconocimiento de rostros** [Video* 9mins](https://youtu.be/T9MGDO5PJ2A)<br/>Ilustramos distintos modos de usar NMF en un caso de uso muy común.
 
+**LAB 06.01 - Clustering en instrumentos financieros** [Video* 13mins](https://youtu.be/1NXQoCNffLA)<br/>Taller con el objetivo de agrupar empresas con comportamientos similares en bolsa.
+
+**LAB 06.02 - NMF para búsqueda de rostros** [Video* 7mins](https://youtu.be/UIekz3pZqWw)<br/>Taller en el que usarás NMF para buscar rostros similares a uno dado.
+
