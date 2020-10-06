@@ -44,6 +44,7 @@
 
 - file: content/M06_description
   sections:
+    - file: "content/M06_videos.md"
     - file: "content/NOTES 06.01 - UNSUPERVISED LEARNING - CLUSTERING"
     - file: "content/NOTES 06.02 - PCA"
     - file: "content/NOTES 06.03 - DIMENSIONALITY REDUCTION"
