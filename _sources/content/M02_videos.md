@@ -23,19 +23,19 @@
 
 **2.11 - Numpy - Argumentos por referncia** [Video 6mins](https://youtu.be/azeWjbaiCOM) <br/> La matrices de Numpy y la mayoría de los objetos en Python se pasan por _referencia_ cuando los usamos en funciones. Entender este mecanismo es clave para evitar errores o efectos indeseados
 
-**2.12 - Matplotlib** [Video* 3mins](https://youtu.be/doAm-t6IZUI) <br/> Hacemos una breve introducción a Matplotlib, la librería para hacer gráficos, para que a partir de aquí puedas seguir buscando y aprendiendo como usarla.
+**2.12 - Matplotlib** [Video 3mins](https://youtu.be/BOp87WqKuHY) <br/> Hacemos una breve introducción a Matplotlib, la librería para hacer gráficos, para que a partir de aquí puedas seguir buscando y aprendiendo como usarla.
 
-**2.13 - Introducción a Pandas** [Video* 14mins](https://youtu.be/Ydpi6zv0B9M) <br/> Pandas es la librería de manejo de datasets en memoria para Python.
+**2.13 - Introducción a Pandas** [Video 14mins](https://youtu.be/tqwZed4385U) <br/> Pandas es la librería de manejo de datasets en memoria para Python.
 
-**2.14 - Pandas - Carga e inspección** [Video* 9mins](https://youtu.be/yp4wqmRGiEk) <br/> Mostramos cómo es la carga e inspección inicial de un dataset
+**2.14 - Pandas - Carga e inspección** [Video 9mins](https://youtu.be/SYOBN-WAXWM) <br/> Mostramos cómo es la carga e inspección inicial de un dataset
 
-**2.15 - Pandas - Reparación de datasets** [Video* 10mins](https://youtu.be/X5DxxgC2PvQ) <br/> Describimos las operaciones básicas para tener un dataset en disposición de ser trabajado.
+**2.15 - Pandas - Reparación de datasets** [Video 10mins](https://youtu.be/MceJd7-czHM) <br/> Describimos las operaciones básicas para tener un dataset en disposición de ser trabajado.
 
-**2.16 - Pandas - Reparación de datos faltantes** [Video* 7mins](https://youtu.be/tJKrj6ePYUY) <br/> Funcionalidades de base de Pandas para la imputación de datos faltantes.
+**2.16 - Pandas - Reparación de datos faltantes** [Video 7mins](https://youtu.be/4WAy4La4OUs) <br/> Funcionalidades de base de Pandas para la imputación de datos faltantes.
 
-**2.17 - Pandas - Series temporales** [Video* 14mins](https://youtu.be/is8mzR0fCaw) <br/> Explicamos las opciones de manejo de datasets indexados por marcas de tiempo en Pandas.
+**2.17 - Pandas - Series temporales** [Video 14mins](https://youtu.be/idatxyBHwII) <br/> Explicamos las opciones de manejo de datasets indexados por marcas de tiempo en Pandas.
 
-**2.18 - Pandas - Miscelánea** [Video* 8mins](https://youtu.be/XTAzVQBUr8U) <br/> Mencionamos algunas funcionalidades adicionales como agrupamiento, generación de dataframes y plotting.
+**2.18 - Pandas - Miscelánea** [Video* 8mins](https://youtu.be/y8AJG18lClo) <br/> Mencionamos algunas funcionalidades adicionales como agrupamiento, generación de dataframes y plotting.
 
 **LAB 02.01 - 02.03** [Video* 5mins](https://youtu.be/xlRSvCI0cLg) <br/> Descripción general de los laboratorios del módulo.
 
