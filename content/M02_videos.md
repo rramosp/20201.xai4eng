@@ -35,7 +35,7 @@
 
 **2.17 - Pandas - Series temporales** [Video 14mins](https://youtu.be/idatxyBHwII) <br/> Explicamos las opciones de manejo de datasets indexados por marcas de tiempo en Pandas.
 
-**2.18 - Pandas - Miscelánea** [Video* 8mins](https://youtu.be/y8AJG18lClo) <br/> Mencionamos algunas funcionalidades adicionales como agrupamiento, generación de dataframes y plotting.
+**2.18 - Pandas - Miscelánea** [Video 8mins](https://youtu.be/y8AJG18lClo) <br/> Mencionamos algunas funcionalidades adicionales como agrupamiento, generación de dataframes y plotting.
 
 **LAB 02.01 - 02.03** [Video* 5mins](https://youtu.be/xlRSvCI0cLg) <br/> Descripción general de los laboratorios del módulo.
 
