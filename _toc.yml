@@ -53,6 +53,7 @@
 
 - file: content/M07_description
   sections:
+    - file: "content/M07_videos.md"
     - file: "content/NOTES 07.01 - OPTIMIZATION"
     - file: "content/NOTES 07.02 - DESIGNING ML ALGORITHMS"
     - file: "content/NOTES 07.03 - NEURAL NETWORKS"
