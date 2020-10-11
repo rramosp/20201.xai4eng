@@ -1,4 +1,4 @@
-# VIDEO CLASSES
+# MODULO 6: Métodos no supervisados
 
 **6.01 - Aprendizaje no supervisado** [Video* 11mins](https://youtu.be/UWZjrRBVJdo) <br/> Planteamos el esquema general de algoritmos de aprendizaje no supervisado.
 

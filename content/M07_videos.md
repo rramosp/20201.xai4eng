@@ -1,4 +1,4 @@
-# VIDEO CLASSES
+# MODULO 7: Diseño de algoritmos
 
 **7.01 - Optimización** [Video* 16mins](https://youtu.be/QACmHORkm0E) <br/> Mostramos un par de ejemplos de utilización de las librerías de optimización de Python
 
