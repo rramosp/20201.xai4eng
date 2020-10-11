@@ -1,5 +1,4 @@
-# VIDEO CLASSES
-
+# MODULO 2: Python
 
 **2.01 - Introducción a los Notebooks de Jupyter** [Video 13mins](https://youtu.be/AKvAD1aE-30) <br/> Describimos una de las herramientas que más se usa en ciencia de datos y sobre la que se basa este curso.
 

@@ -1,5 +1,4 @@
-# VIDEO CLASSES
-
+# MODULO 3: Generación de modelos
 
 **3.01 - Flujo de trabajo de Machine Learning** [Video 10mins](https://www.youtube.com/watch?v=VicKyzFGBM0) <br/> Explicamos el flujo de trabajo general que se realiza al desarrollar modelos de Machine Learning.
 

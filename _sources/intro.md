@@ -1,89 +1,30 @@
-# Información del curso
+# Bienvenida
 
-**2020 Semestre 1 - Universidad de Antioquia**
+Bienvenidos al curso de **Inteligencia Artificial para las Ciencias y las Ingenierías**. 
 
-- [PLATAFORMA DE CALIFICACIONES AUTOMÁTICAS](https://m5knaekxo6.execute-api.us-west-2.amazonaws.com/dev-v0001/rlxmooc/web/login)
-- [Canal SLACK del curso](https://join.slack.com/t/ai4eng-udea2020-1/signup)
-- [REGISTRO DE GRUPOS DE PROYECTO](https://forms.gle/r8hoDrLTHcXF6vgS7) (solo un registro por grupo)
-
-## Programa y Calendario
-
-    week start      MARTES 10:00-12:00          JUEVES 10:00-12:00
-    ------------------------------------------------------------------------------
-    W1      30/ago  M1.INTRO                    PROY/LAB
-    W2      07/sep  M2.PYTHON                   PROY/LAB
-    W3      14/sep  M2.PYTHON                   PROY/LAB
-    W4      21/sep  PROY/LAB                    PROY/LAB         
-    W5      28/sep  M3.MODEL_CALIBRATION        PROY/LAB         
-    W6      05/oct  M3.MODEL_CALIBRATION        PROY/LAB
-    W7      12/oct  PROY/LAB                    PROY/LAB         
-    W8      19/oct  M4.DATA_MANAGEMENT          PROY/LAB           
-    W9      26/oct  M4.DATA_MANAGEMENT          PROY/LAB         
-    W10     02/nov  M5.MODEL_MANAGEMENT         PROY/LAB         
-    W11     09/nov  M5.MODEL_MANAGEMENT         PROY/LAB         
-    W12     16/nov  PROY/LAB                    PROY/LAB
-    W13     23/nov  M6.UNSUPERVISED             PROY/LAB
-    W14     30/nov  M7.ALGO_DESIGN              PROY/LAB
-    W15     07/dic  M7.ALGO_DESIGN              PROY/LAB
-    W16     14/dic  PROY/LAB                    PROY/LAB
-
-**Calendario**
-
-     1/sep/2020     Inicio de clases
-    26/oct/2020     Evaluación 40%
-    18/dic/2020     Fin clases
-    18-23/ene/2021  Exámenes finales
-    25-30/ene/2021  Habilitación y validación
-     1/feb/2021     Terminación oficial
-    
-
-## Evaluación
-
-    50% LABS
-    20% AI4Everyone
-    30% PROYECTO
+<center>
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/IVki8KaUm2s" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+</center>
 
 
-### Fechas de entregas
+## Dirigido a
+- quien tenga interés en <font color="red">**aplicar IA**</font> basada en Machine Learning en la práctica.
+- acepte el reto de <font color="red">**programar en Python**</font>. Un módulo del curso está **dedicado a Python** para que aprendas o refresques.
 
-    01/oct/2020     REGISTRO GRUPOS DE PROYECTO
-    01/nov/2020     PROYECTO ENTREGA 1
-    09/nov/2020     LABS 1-4
-    18/dic/2020     Certificado AI for Everyone
-    15/ene/2021     LABS 5-7
-    23/ene/2021     PROYECTO ENTREGA 2
+## Con los siguientes principios:
 
+- <font color="red">**Aprender cualquier materia**</font> pasa por cometer <font color="red">**todos los posibles errores**</font>. El curso está diseñado sobre Jupyter Notebooks ejecutables directamente en Google Colab para que itneracciones directamente con el contenido y construyas tu propia experiencia.
+- <font color="red">**Cualquiera puede aprender a programar**</font> (Python). Por ejemplo, si has hecho una fórmula o una macro en Excel, <font color="red">**ya has programado**</font>. Si nunca has usado un lenguaje de programación, tendrás que dedicarle un poco más de tiempo al curso. Si has usado otros lenguajes de programación, tendrás que acostumbrarte a la [forma de programar de Python](https://www.houseofbots.com/news-detail/12008-1-some-features-which-will-make-python-different-from-other-programming-languages).
+- Huímos de cualquier idea fantasiosa de IA.  Generamos <font color="red">**modelos basados en los datos**</font>, que funcionarán mejor o peor, serán más o menos útiles en tanto en cuanto entendamos y manejemos los procesos por los que creamos dichos modelos.
+- Este proceso es <font color="red">**experimental e iterativo**</font>, la mayoría de las preguntas las responderemos implementando algún experimento con datos y entendiendo sus resultados.
 
-## Proyecto
+## Este es un curso abierto
+- <font color="red">**Podrás acceder**</font> a videos, notebooks y talleres.
+- Solo podrás ejecutar los autocorrectores y <font color="red">**tener una calificación**</font> o <font color="red">**un certificado**</font> si estás matriculad@ en alguno de nuestros cursos.
 
-Tendrás que hacer un proyecto de analítica de datos para el cual deberás:
-
-1. Definir un problema predictivo
-2. Obtener un dataset para resolverlo
-3. Realizar el preprocesado y limpieza de datos
-4. Encontrar los mejores hiperparámetros para DOS algoritmos predictivos
-5. Encontrar los mejores hiperparámetros para DOS combinaciones de algoritmo no supervisado + algoritmo predictivo
-6. Realizar las curvas de aprendizaje  para cada uno de los cuatro casos anteriores
-7. Realizar una evaluación diagnóstica que contenga:
-    1. Para cada uno de los cuatro casos anteriores un diagnóstico de overfitting/bias etc.
-    1. Una recomendación justificada de qué pasos a seguir si tuvieras que intentar mejorar el desempeño obtenido.
-    1. Una evaluación sobre los retos y condiciones para desplegar en producción un modelo (como establecerías el nivel de desempeño mínimo para desplegar en producción, cómo se desplegaría en producción, cómo serían los procesos de monitoreo del desempeño en producción)
-
-**Podrán formarse grupos de 2 o 3 estudiantes**
-
-#### Entregas del proyecto
-
-Tendrás que hacer dos entregas del proyecto:
-
-- **ENTREGA 1**: Un archivo llamado **PROYECTO_FASE1.pdf** en el que describas el problema predictivo a resolver, el dataset que vas a utilizar y las métricas de desempeño requeridas. Incluye igualmente un primer criterio sobre cual sería el desempeño deseable en producción (pasos 1 y 2).
-- **ENTREGA 2**: Un archivo llamado **PROYECTO_FASE2.pdf** en el que describas el resto de la ejecucióndel proyecto, con la evidencia necesaria. Tendrás que incluir una carpeta llamada **PROYECTO_FASE2_MATERIALES** donde incluyas todas las herramientas necesarias para reproducir los resultados que obtuviste (muestras de los datasets, notebooks, instrucciones de uso de las herramientas que hayas usado, etc.)
-
-**TODAS LAS ENTREGAS HAN DE DEPOSITARSE EN LA CARPETA DRIVE DE CADA ESTUDIANTE**.
-
-
-## AI for Everyone
-
-Deberás de completar el curso [AI for Everyone](https://www.deeplearning.ai/ai-for-everyone/). Los quizes incluirán preguntas sobre el mismo según se indica más arriba
-
-Deberás de depositar el certificado de compleción en un fichero llamado **CERTIFICADO_IA4EVERYONE.pdf** en la carpeta compartida del curso.
+----
 

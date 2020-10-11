@@ -1,4 +1,4 @@
-## VIDEO CLASSES
+# MODULO 1: Introducción
 
 **1.01 - ¿Qué es la inteligencia artificial para tí?** [Video 14mins](https://www.youtube.com/watch?v=y3mRk4C9tpM)<br/>Desmitificamos el concepto de Inteligencia Artificial y te invitamos a reflexionar sobre el mismo.
 
