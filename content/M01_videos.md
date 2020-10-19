@@ -8,9 +8,9 @@
 
 **1.04 - Big Data, Machine Learning, Data Scientists y otros términos asociados** [Video 16mins](https://www.youtube.com/watch?v=qzBkSK2TFLA)<br/>Revisamos varios conjuntos de tecnologías y términos asociados de manera más o menos directa a la inteligencia artificial y te sugerimos cómo considerarlos y organizarlos.
 
-**1.05 - Trabajando con los materiales del curso** [Video* 13mins](https://youtu.be/UMGoNmURqw0) <br/>Explicamos cómo utilizar los materiales del curso de manera interactiva sobre Google Colab.
+**1.05 - Trabajando con los materiales del curso** [Video 13mins](https://youtu.be/Rg0_9EBtUIc) <br/>Explicamos cómo utilizar los materiales del curso de manera interactiva sobre Google Colab.
 
-**1.06 - Talleres y plataforma de autocorrección** [Video* 13mins](https://youtu.be/bh6ZbL0L9vU)<br/>Explicamos cómo completar los talleres y acceder a la plataforma donde podrás ver tu avance en el curso.
+**1.06 - Talleres y plataforma de autocorrección** [Video 13mins](https://youtu.be/eISlF6k0y58)<br/>Explicamos cómo completar los talleres y acceder a la plataforma donde podrás ver tu avance en el curso.
 
 **LAB 01.01 - PRACTICE SUBMISSION** [Video 9mins](https://www.youtube.com/watch?v=XRxmsSxelFk)<br/>Este primer taller sirve para familiarizarse con el mecanismo de envío de talleres sobre la plataforma de corrección automática.
 
