@@ -16,7 +16,7 @@
 
 **2.08 - Numpy - Indexado de matrices** [Video 10mins](https://youtu.be/FsQB4hYRv2c) <br/> La sintaxis de indexado de estructuras de Numpy es muy potente y flexible.
 
-**2.09 - Numpy - Imágenes como matrices** [Video* 17mins](https://youtu.be/V1N_D2672JQ) <br/> Mostramos cómo a través de la manipulación de matrices estándar de Numpy se pueden realizar muchas operaciones con un significado concreto en cada dominio de aplicaicón, en este caso, con imágenes.
+**2.09 - Numpy - Imágenes como matrices** [Video 17mins](https://youtu.be/wodxeRXxiGM) <br/> Mostramos cómo a través de la manipulación de matrices estándar de Numpy se pueden realizar muchas operaciones con un significado concreto en cada dominio de aplicaicón, en este caso, con imágenes.
 
 **2.10 - Numpy - Vectorización y broadcasting** [Video 17mins](https://youtu.be/olP4ofwUfsc) <br/> Las operaciones vectorizadas son clave para un uso eficiente de Numpy. Además, el mecanismo de _broadcasting_ nos permite extender las operaciones sobre matrices a un gran número de casos.
 
@@ -36,7 +36,7 @@
 
 **2.18 - Pandas - Miscelánea** [Video 8mins](https://youtu.be/y8AJG18lClo) <br/> Mencionamos algunas funcionalidades adicionales como agrupamiento, generación de dataframes y plotting.
 
-**LAB 02.01 - 02.03** [Video* 5mins](https://youtu.be/xlRSvCI0cLg) <br/> Descripción general de los laboratorios del módulo.
+**LAB 02.01 - 02.03** [Video 5mins](https://youtu.be/56b32uOWIWA) <br/> Descripción general de los laboratorios del módulo.
 
 **LAB 02.04 - Card trick** [Video 7mins](https://www.youtube.com/watch?v=GUx94AdHxHw) <br/> Laboratorio basado en un truco de cartas.
 
