@@ -27,6 +27,8 @@ allowfullscreen></iframe>
 - Solo podrás ejecutar los autocorrectores y <font color="red">**tener una calificación**</font> o <font color="red">**un certificado**</font> si estás matriculad@ en alguno de nuestros cursos.
 
 ----
+
 [Descarga un ZIP con los notebooks del curso](https://github.com/rramosp/20201.xai4eng/archive/master.zip)
+
 ----
 
