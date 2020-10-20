@@ -15,6 +15,8 @@ allowfullscreen></iframe>
 - quien tenga interés en <font color="red">**aplicar IA**</font> basada en Machine Learning en la práctica.
 - acepte el reto de <font color="red">**programar en Python**</font>. Un módulo del curso está **dedicado a Python** para que aprendas o refresques.
 
+[Descarga un ZIP con todos los contenidos del curso](https://github.com/rramosp/20201.xai4eng/archive/master.zip)
+
 ## Con los siguientes principios:
 
 - <font color="red">**Aprender cualquier materia**</font> pasa por cometer <font color="red">**todos los posibles errores**</font>. El curso está diseñado sobre Jupyter Notebooks ejecutables directamente en Google Colab para que interacciones directamente con el contenido y construyas tu propia experiencia.
