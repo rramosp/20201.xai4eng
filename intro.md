@@ -15,7 +15,7 @@ allowfullscreen></iframe>
 - quien tenga interés en <font color="red">**aplicar IA**</font> basada en Machine Learning en la práctica.
 - acepte el reto de <font color="red">**programar en Python**</font>. Un módulo del curso está **dedicado a Python** para que aprendas o refresques.
 
-[Descarga un ZIP con todos los contenidos del curso](https://github.com/rramosp/20201.xai4eng/archive/master.zip)
+[Descarga un ZIP con los notebooks del curso](https://github.com/rramosp/20201.xai4eng/archive/master.zip)
 
 ## Con los siguientes principios:
 
