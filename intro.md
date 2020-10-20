@@ -15,7 +15,7 @@ allowfullscreen></iframe>
 - quien tenga interés en <font color="red">**aplicar IA**</font> basada en Machine Learning en la práctica.
 - acepte el reto de <font color="red">**programar en Python**</font>. Un módulo del curso está **dedicado a Python** para que aprendas o refresques.
 
-## Con los siguientes principios:
+## Con los siguientes principios
 
 - <font color="red">**Aprender cualquier materia**</font> pasa por cometer <font color="red">**todos los posibles errores**</font>. El curso está diseñado sobre Jupyter Notebooks ejecutables directamente en Google Colab para que interacciones directamente con el contenido y construyas tu propia experiencia.
 - <font color="red">**Cualquiera puede aprender a programar**</font> (Python). Por ejemplo, si has hecho una fórmula o una macro en Excel, <font color="red">**ya has programado**</font>. Si nunca has usado un lenguaje de programación, tendrás que dedicarle un poco más de tiempo al curso. Si has usado otros lenguajes de programación, tendrás que acostumbrarte a la [forma de programar de Python](https://www.houseofbots.com/news-detail/12008-1-some-features-which-will-make-python-different-from-other-programming-languages).
