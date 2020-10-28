@@ -150,6 +150,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="#we-use-titanic-data-in-kaggle">
+     We use Titanic data in Kaggle
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="LAB%2005.01%20-%20MEASURING%20PREDICTIVITY%20IMPACT.html">
      LAB 05.01 - Predictions impact
     </a>
@@ -259,10 +264,22 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#put-all-transformations-together">
-   Put all transformations together
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   05.04 - PARTICIPATE IN KAGGLE
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#we-use-titanic-data-in-kaggle">
+   We use Titanic data in Kaggle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#put-all-transformations-together">
+     Put all transformations together
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -279,7 +296,7 @@
 <h1>05.04 - PARTICIPATE IN KAGGLE<a class="headerlink" href="#participate-in-kaggle" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget --no-cache -O init.py -q https://raw.githubusercontent.com/rramosp/20201.xai4eng/master/content/init.py
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##WGET_INIT##</span>
 <span class="kn">import</span> <span class="nn">init</span><span class="p">;</span> <span class="n">init</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">force_download</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span> <span class="n">init</span><span class="o">.</span><span class="n">get_weblink</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -301,11 +318,14 @@
 </div>
 </div>
 </div>
-<p>## We use Titanic Data at Kaggle</p>
+</div>
+<div class="section" id="we-use-titanic-data-in-kaggle">
+<h1>We use Titanic data in <a class="reference external" href="http://www.kaggle.com">Kaggle</a><a class="headerlink" href="#we-use-titanic-data-in-kaggle" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Register to Kaggle <span class="xref myst">www.kaggle.com</span></p></li>
+<li><p>Register to <a class="reference external" href="http://www.kaggle.com">Kaggle</a></p></li>
 <li><p>Enter the competition <a class="reference external" href="https://www.kaggle.com/c/titanic">Titanic Data at Kaggle</a></p></li>
 <li><p>Download the <code class="docutils literal notranslate"><span class="pre">train.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">test.csv</span></code> files</p></li>
+<li><p><strong>UPLOAD THE FILES</strong> to your notebook environment (in Colab, open the Files tab and upload)</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -486,7 +506,7 @@ Name: Embarked, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 05.04 - EXAMPLE SUBMISSION TO KAGGLE_9_0.png" src="../_images/NOTES 05.04 - EXAMPLE SUBMISSION TO KAGGLE_9_0.png" />
+<img alt="../_images/NOTES 05.04 - EXAMPLE SUBMISSION TO KAGGLE_10_0.png" src="../_images/NOTES 05.04 - EXAMPLE SUBMISSION TO KAGGLE_10_0.png" />
 </div>
 </div>
 <p><strong>Remove uninformative columns</strong></p>
@@ -608,7 +628,7 @@ Name: Embarked, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 05.04 - EXAMPLE SUBMISSION TO KAGGLE_15_0.png" src="../_images/NOTES 05.04 - EXAMPLE SUBMISSION TO KAGGLE_15_0.png" />
+<img alt="../_images/NOTES 05.04 - EXAMPLE SUBMISSION TO KAGGLE_16_0.png" src="../_images/NOTES 05.04 - EXAMPLE SUBMISSION TO KAGGLE_16_0.png" />
 </div>
 </div>
 <p><strong>Turn categorical columns to a <code class="docutils literal notranslate"><span class="pre">one_hot</span></code> encoding</strong></p>
