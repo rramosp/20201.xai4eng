@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>03.02 - MODELS FROM DATA &#8212; Inteligencia Artificial para las Ciencias e Ingenierías</title>
+    <title>03.01 - MODELS FROM DATA &#8212; Inteligencia Artificial para las Ciencias e Ingenierías</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,8 +57,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="03.03 - SUPERVISED ALGORITHMS" href="NOTES%2003.03%20-%20SUPERVISED%20ALGORITHMS.html" />
-    <link rel="prev" title="MODULO 3: Generación de modelos" href="M03_videos.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -98,7 +96,7 @@
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="M00_20201udea.html">
    Información 2020.1 - UdeA
@@ -114,37 +112,10 @@
    MODULO 2: Python
   </a>
  </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1">
   <a class="reference internal" href="M03_videos.html">
    MODULO 3: Generación de modelos
   </a>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     03.02 - MODELS FROM DATA
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="NOTES%2003.03%20-%20SUPERVISED%20ALGORITHMS.html">
-     03.03 - SUPERVISED ALGORITHMS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="NOTES%2003.04%20-%20SVM%20AND%20FEATURE%20TRANSFORMATION.html">
-     03.04 - SVMs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="LAB%2003.01%20-%20MODEL%20GENERATION.html">
-     LAB 03.01 - Model Generation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="LAB%2003.02%20-%20TIMESERIES%20MODEL.html">
-     LAB 03.02 - Timeseries model
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="M04_videos.html">
@@ -208,7 +179,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/content/NOTES 03.02 - MODELS DERIVED FROM DATA.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/content/NOTES 03.01 - MODELS DERIVED FROM DATA.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -235,7 +206,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/rramosp/20201.xai4eng/blob/master/content/NOTES 03.02 - MODELS DERIVED FROM DATA.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/rramosp/20201.xai4eng/blob/master/content/NOTES 03.01 - MODELS DERIVED FROM DATA.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -315,7 +286,7 @@
               <div>
                 
   <div class="section" id="models-from-data">
-<h1>03.02 - MODELS FROM DATA<a class="headerlink" href="#models-from-data" title="Permalink to this headline">¶</a></h1>
+<h1>03.01 - MODELS FROM DATA<a class="headerlink" href="#models-from-data" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget --no-cache -O init.py -q https://raw.githubusercontent.com/rramosp/20201.xai4eng/master/content/init.py
@@ -372,7 +343,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_4_0.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_4_0.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_4_0.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_4_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -396,7 +367,7 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>frontera óptima en 13.15
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_5_1.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_5_1.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_5_1.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_5_1.png" />
 </div>
 </div>
 <div class="section" id="calculo-analitico-de-los-errores-de-clasificacion">
@@ -433,7 +404,7 @@ pop 2 error 0.09957961739117976
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7f91456ee690&gt;
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_9_1.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_9_1.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_9_1.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_9_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -444,7 +415,7 @@ pop 2 error 0.09957961739117976
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_17_0.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_17_0.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_17_0.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_17_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -455,7 +426,7 @@ pop 2 error 0.09957961739117976
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_18_0.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_18_0.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_18_0.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_18_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -466,7 +437,7 @@ pop 2 error 0.09957961739117976
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_19_0.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_19_0.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_19_0.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_19_0.png" />
 </div>
 </div>
 </div>
@@ -493,7 +464,7 @@ pop 2 error 0.09957961739117976
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_21_0.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_21_0.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_21_0.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_21_0.png" />
 </div>
 </div>
 <p>haz los siguientes experimentos:</p>
@@ -517,7 +488,7 @@ pop 2 error 0.09957961739117976
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_24_0.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_24_0.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_24_0.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_24_0.png" />
 </div>
 </div>
 <div class="section" id="los-algoritmos-de-machine-learning">
@@ -577,7 +548,7 @@ pop 2 error 0.09957961739117976
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_27_0.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_27_0.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_27_0.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_27_0.png" />
 </div>
 </div>
 <p>hacemos ahora el experimento más exhaustivo repitiendo 20 veces el siguiente proceso:</p>
@@ -598,7 +569,7 @@ pop 2 error 0.09957961739117976
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100% (4 of 4) |##########################| Elapsed Time: 0:00:09 Time:  0:00:09
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_29_1.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_29_1.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_29_1.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_29_1.png" />
 </div>
 </div>
 </div>
@@ -637,7 +608,7 @@ pop 2 error 0.09957961739117976
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_31_0.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_31_0.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_31_0.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_31_0.png" />
 </div>
 </div>
 <p>realizamos un muestreo para dividir entre train y test</p>
@@ -677,7 +648,7 @@ pop 2 error 0.09957961739117976
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;test data&#39;)
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_34_1.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_34_1.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_34_1.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_34_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -797,7 +768,7 @@ test_score   0.70
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.85395, 0.14605)
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_38_2.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_38_2.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_38_2.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_38_2.png" />
 </div>
 </div>
 </div>
@@ -828,7 +799,7 @@ test_score   0.70
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100% (9 of 9) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_41_1.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_41_1.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_41_1.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_41_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -846,7 +817,7 @@ test_score   0.70
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100% (9 of 9) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_42_1.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_42_1.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_42_1.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_42_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -864,7 +835,7 @@ test_score   0.70
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100% (9 of 9) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_43_1.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_43_1.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_43_1.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_43_1.png" />
 </div>
 </div>
 <p>no olvides que normalmente <strong>no conocemos la <em>frontera bayesiana</em></strong>, y por tanto no tenemos el <em>bayes score</em></p>
@@ -898,7 +869,7 @@ test_score   0.70
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_47_0.png" src="../_images/NOTES 03.02 - MODELS DERIVED FROM DATA_47_0.png" />
+<img alt="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_47_0.png" src="../_images/NOTES 03.01 - MODELS DERIVED FROM DATA_47_0.png" />
 </div>
 </div>
 </div>
@@ -932,8 +903,6 @@ test_score   0.70
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="M03_videos.html" title="previous page">MODULO 3: Generación de modelos</a>
-    <a class='right-next' id="next-link" href="NOTES%2003.03%20-%20SUPERVISED%20ALGORITHMS.html" title="next page">03.03 - SUPERVISED ALGORITHMS</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

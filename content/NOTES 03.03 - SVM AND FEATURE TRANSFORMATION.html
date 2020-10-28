@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>03.04 - SVMs &#8212; Inteligencia Artificial para las Ciencias e Ingenierías</title>
+    <title>03.03 - SVMs &#8212; Inteligencia Artificial para las Ciencias e Ingenierías</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,8 +57,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="LAB 03.01 - Model Generation" href="LAB%2003.01%20-%20MODEL%20GENERATION.html" />
-    <link rel="prev" title="03.03 - SUPERVISED ALGORITHMS" href="NOTES%2003.03%20-%20SUPERVISED%20ALGORITHMS.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -98,7 +96,7 @@
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="M00_20201udea.html">
    Información 2020.1 - UdeA
@@ -114,37 +112,10 @@
    MODULO 2: Python
   </a>
  </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1">
   <a class="reference internal" href="M03_videos.html">
    MODULO 3: Generación de modelos
   </a>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="NOTES%2003.02%20-%20MODELS%20DERIVED%20FROM%20DATA.html">
-     03.02 - MODELS FROM DATA
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="NOTES%2003.03%20-%20SUPERVISED%20ALGORITHMS.html">
-     03.03 - SUPERVISED ALGORITHMS
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     03.04 - SVMs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="LAB%2003.01%20-%20MODEL%20GENERATION.html">
-     LAB 03.01 - Model Generation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="LAB%2003.02%20-%20TIMESERIES%20MODEL.html">
-     LAB 03.02 - Timeseries model
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="M04_videos.html">
@@ -208,7 +179,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/content/NOTES 03.04 - SVM AND FEATURE TRANSFORMATION.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/content/NOTES 03.03 - SVM AND FEATURE TRANSFORMATION.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -235,7 +206,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/rramosp/20201.xai4eng/blob/master/content/NOTES 03.04 - SVM AND FEATURE TRANSFORMATION.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/rramosp/20201.xai4eng/blob/master/content/NOTES 03.03 - SVM AND FEATURE TRANSFORMATION.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -283,7 +254,7 @@
               <div>
                 
   <div class="section" id="svms">
-<h1>03.04 - SVMs<a class="headerlink" href="#svms" title="Permalink to this headline">¶</a></h1>
+<h1>03.03 - SVMs<a class="headerlink" href="#svms" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget --no-cache -O init.py -q https://raw.githubusercontent.com/rramosp/20201.xai4eng/master/content/init.py
@@ -341,7 +312,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.514125, 0.485875)
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.04 - SVM AND FEATURE TRANSFORMATION_5_3.png" src="../_images/NOTES 03.04 - SVM AND FEATURE TRANSFORMATION_5_3.png" />
+<img alt="../_images/NOTES 03.03 - SVM AND FEATURE TRANSFORMATION_5_3.png" src="../_images/NOTES 03.03 - SVM AND FEATURE TRANSFORMATION_5_3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -371,7 +342,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x7fa8b2663fd0&gt;
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.04 - SVM AND FEATURE TRANSFORMATION_7_1.png" src="../_images/NOTES 03.04 - SVM AND FEATURE TRANSFORMATION_7_1.png" />
+<img alt="../_images/NOTES 03.03 - SVM AND FEATURE TRANSFORMATION_7_1.png" src="../_images/NOTES 03.03 - SVM AND FEATURE TRANSFORMATION_7_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -419,7 +390,7 @@
 number of support vectors 50
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.04 - SVM AND FEATURE TRANSFORMATION_12_1.png" src="../_images/NOTES 03.04 - SVM AND FEATURE TRANSFORMATION_12_1.png" />
+<img alt="../_images/NOTES 03.03 - SVM AND FEATURE TRANSFORMATION_12_1.png" src="../_images/NOTES 03.03 - SVM AND FEATURE TRANSFORMATION_12_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -445,7 +416,7 @@ number of support vectors 50
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ff51a2d75c0&gt;
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.04 - SVM AND FEATURE TRANSFORMATION_13_2.png" src="../_images/NOTES 03.04 - SVM AND FEATURE TRANSFORMATION_13_2.png" />
+<img alt="../_images/NOTES 03.03 - SVM AND FEATURE TRANSFORMATION_13_2.png" src="../_images/NOTES 03.03 - SVM AND FEATURE TRANSFORMATION_13_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -482,7 +453,7 @@ number of support vectors 50
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ff51a244630&gt;
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.04 - SVM AND FEATURE TRANSFORMATION_15_2.png" src="../_images/NOTES 03.04 - SVM AND FEATURE TRANSFORMATION_15_2.png" />
+<img alt="../_images/NOTES 03.03 - SVM AND FEATURE TRANSFORMATION_15_2.png" src="../_images/NOTES 03.03 - SVM AND FEATURE TRANSFORMATION_15_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -506,7 +477,7 @@ number of support vectors 50
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ff51a2400b8&gt;
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.04 - SVM AND FEATURE TRANSFORMATION_16_2.png" src="../_images/NOTES 03.04 - SVM AND FEATURE TRANSFORMATION_16_2.png" />
+<img alt="../_images/NOTES 03.03 - SVM AND FEATURE TRANSFORMATION_16_2.png" src="../_images/NOTES 03.03 - SVM AND FEATURE TRANSFORMATION_16_2.png" />
 </div>
 </div>
 </div>
@@ -540,8 +511,6 @@ number of support vectors 50
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="NOTES%2003.03%20-%20SUPERVISED%20ALGORITHMS.html" title="previous page">03.03 - SUPERVISED ALGORITHMS</a>
-    <a class='right-next' id="next-link" href="LAB%2003.01%20-%20MODEL%20GENERATION.html" title="next page">LAB 03.01 - Model Generation</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

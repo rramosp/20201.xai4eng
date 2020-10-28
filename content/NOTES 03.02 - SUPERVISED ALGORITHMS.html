@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>03.03 - SUPERVISED ALGORITHMS &#8212; Inteligencia Artificial para las Ciencias e Ingenierías</title>
+    <title>03.02 - SUPERVISED ALGORITHMS &#8212; Inteligencia Artificial para las Ciencias e Ingenierías</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,8 +57,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="03.04 - SVMs" href="NOTES%2003.04%20-%20SVM%20AND%20FEATURE%20TRANSFORMATION.html" />
-    <link rel="prev" title="03.02 - MODELS FROM DATA" href="NOTES%2003.02%20-%20MODELS%20DERIVED%20FROM%20DATA.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -98,7 +96,7 @@
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="M00_20201udea.html">
    Información 2020.1 - UdeA
@@ -114,37 +112,10 @@
    MODULO 2: Python
   </a>
  </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1">
   <a class="reference internal" href="M03_videos.html">
    MODULO 3: Generación de modelos
   </a>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="NOTES%2003.02%20-%20MODELS%20DERIVED%20FROM%20DATA.html">
-     03.02 - MODELS FROM DATA
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     03.03 - SUPERVISED ALGORITHMS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="NOTES%2003.04%20-%20SVM%20AND%20FEATURE%20TRANSFORMATION.html">
-     03.04 - SVMs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="LAB%2003.01%20-%20MODEL%20GENERATION.html">
-     LAB 03.01 - Model Generation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="LAB%2003.02%20-%20TIMESERIES%20MODEL.html">
-     LAB 03.02 - Timeseries model
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="M04_videos.html">
@@ -208,7 +179,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/content/NOTES 03.03 - SUPERVISED ALGORITHMS.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/content/NOTES 03.02 - SUPERVISED ALGORITHMS.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -235,7 +206,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/rramosp/20201.xai4eng/blob/master/content/NOTES 03.03 - SUPERVISED ALGORITHMS.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/rramosp/20201.xai4eng/blob/master/content/NOTES 03.02 - SUPERVISED ALGORITHMS.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -291,7 +262,7 @@
               <div>
                 
   <div class="section" id="supervised-algorithms">
-<h1>03.03 - SUPERVISED ALGORITHMS<a class="headerlink" href="#supervised-algorithms" title="Permalink to this headline">¶</a></h1>
+<h1>03.02 - SUPERVISED ALGORITHMS<a class="headerlink" href="#supervised-algorithms" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget --no-cache -O init.py -q https://raw.githubusercontent.com/rramosp/20201.xai4eng/master/content/init.py
@@ -343,7 +314,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_5_0.png" src="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_5_0.png" />
+<img alt="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_5_0.png" src="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_5_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -411,7 +382,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_10_0.png" src="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_10_0.png" />
+<img alt="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_10_0.png" src="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_10_0.png" />
 </div>
 </div>
 </div>
@@ -444,7 +415,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_13_0.png" src="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_13_0.png" />
+<img alt="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_13_0.png" src="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_13_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -462,7 +433,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_15_0.png" src="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_15_0.png" />
+<img alt="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_15_0.png" src="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_15_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -479,7 +450,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_16_0.png" src="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_16_0.png" />
+<img alt="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_16_0.png" src="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_16_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -491,7 +462,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_17_0.png" src="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_17_0.png" />
+<img alt="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_17_0.png" src="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_17_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -515,7 +486,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_19_0.png" src="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_19_0.png" />
+<img alt="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_19_0.png" src="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_19_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -527,7 +498,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_20_0.png" src="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_20_0.png" />
+<img alt="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_20_0.png" src="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_20_0.png" />
 </div>
 </div>
 </div>
@@ -554,7 +525,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.618075, 0.381925)
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_22_2.png" src="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_22_2.png" />
+<img alt="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_22_2.png" src="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_22_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -578,7 +549,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.500675, 0.499325)
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_23_2.png" src="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_23_2.png" />
+<img alt="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_23_2.png" src="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_23_2.png" />
 </div>
 </div>
 </div>
@@ -600,7 +571,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.53705, 0.46295)
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_25_1.png" src="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_25_1.png" />
+<img alt="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_25_1.png" src="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_25_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -619,7 +590,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.68615, 0.31385)
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_26_1.png" src="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_26_1.png" />
+<img alt="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_26_1.png" src="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_26_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -640,7 +611,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.517975, 0.482025)
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_27_1.png" src="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_27_1.png" />
+<img alt="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_27_1.png" src="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_27_1.png" />
 </div>
 </div>
 <p>observa que si alguna de las variables no es independiente el método falla</p>
@@ -663,7 +634,7 @@
   out = random_state.multivariate_normal(mean, cov, size)
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_29_1.png" src="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_29_1.png" />
+<img alt="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_29_1.png" src="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_29_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -684,7 +655,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.66155, 0.33845)
 </pre></div>
 </div>
-<img alt="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_30_2.png" src="../_images/NOTES 03.03 - SUPERVISED ALGORITHMS_30_2.png" />
+<img alt="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_30_2.png" src="../_images/NOTES 03.02 - SUPERVISED ALGORITHMS_30_2.png" />
 </div>
 </div>
 </div>
@@ -718,8 +689,6 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="NOTES%2003.02%20-%20MODELS%20DERIVED%20FROM%20DATA.html" title="previous page">03.02 - MODELS FROM DATA</a>
-    <a class='right-next' id="next-link" href="NOTES%2003.04%20-%20SVM%20AND%20FEATURE%20TRANSFORMATION.html" title="next page">03.04 - SVMs</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

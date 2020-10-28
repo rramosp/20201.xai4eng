@@ -1,14 +1,14 @@
 # MODULO 4: Gestión de datos
 
-**4.01 - Carga de datos y exploración inicial** [Video** 12mins](https://youtu.be/N4_r11DXOXU) <br/>  Nos enfrentamos por primera vez a un dataset de un problema real, basado en una competición de Kaggle.
+**4.01 - Carga de datos y exploración inicial** [Video 12mins](https://youtu.be/yDUibzYS9Go) <br/>  Nos enfrentamos por primera vez a un dataset de un problema real, basado en una competición de Kaggle.
 
-**4.02 - Exploración de variables continuas** [Video** 9mins](https://youtu.be/VFe53YsRRmI) <br/>  Consideraciones sobre la exploración de variables continuas
+**4.02 - Exploración de variables continuas** [Video 9mins](https://youtu.be/ocGrjw7LRfg) <br/>  Consideraciones sobre la exploración de variables continuas
 
-**4.03 - Exploración de variables categóricas** [Video** 4mins](https://youtu.be/YzFmMDJfjpA) <br/>  Consideraciones sobre la exploración de variables categóricas
+**4.03 - Exploración de variables categóricas** [Video 4mins](https://youtu.be/y3H_2XPx6vQ) <br/>  Consideraciones sobre la exploración de variables categóricas
 
-**4.04 - Visión sobre datos faltantes** [Video** 3mins](https://youtu.be/sIEyRCrS8dk) <br/> Mostramos como tener una visión global sobre las variables faltantes de un dataset.
+**4.04 - Visión sobre datos faltantes** [Video 3mins](https://youtu.be/_5lweSCx-2I) <br/> Mostramos como tener una visión global sobre las variables faltantes de un dataset.
 
-**4.05 - Reparación de datos faltantes** [Video** 13mins](https://youtu.be/Edo2BGdHZs8) <br/> Mostramos distintas alternativas para la imputación de datos faltantes.
+**4.05 - Reparación de datos faltantes** [Video 13mins](https://youtu.be/ihpEYrq1UYc) <br/> Mostramos distintas alternativas para la imputación de datos faltantes.
 
 **4.06 - Tests de hipótesis - Intuición** [Video 18mins](https://youtu.be/dyf33Y2owkY) <br/> Recordamos la intuición y mecanismo de los test de hipótesis para evaluar estadísticamente distintas alternativas
 
