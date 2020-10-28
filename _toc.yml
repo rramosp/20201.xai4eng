@@ -16,9 +16,9 @@
     - file: "content/LAB 02.04 - CARD TRICK"
 - file: content/M03_videos
   sections:
-    - file: "content/NOTES 03.02 - MODELS DERIVED FROM DATA"
-    - file: "content/NOTES 03.03 - SUPERVISED ALGORITHMS"
-    - file: "content/NOTES 03.04 - SVM AND FEATURE TRANSFORMATION"
+    - file: "content/NOTES 03.01 - MODELS DERIVED FROM DATA"
+    - file: "content/NOTES 03.02 - SUPERVISED ALGORITHMS"
+    - file: "content/NOTES 03.03 - SVM AND FEATURE TRANSFORMATION"
     - file: "content/LAB 03.01 - MODEL GENERATION"
     - file: "content/LAB 03.02 - TIMESERIES MODEL"
 - file: content/M04_videos
