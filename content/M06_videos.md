@@ -10,7 +10,7 @@
 
 **6.05 - Principal Component Analysis** [Video 15mins](https://youtu.be/Buh2uAfQmyc)<br/>Detallamos la intuición detrás de uno de los algoritmos más sencillos y más usados para la reducción de dimensionalidad.
 
-**6.06 - Programando PCA** [Video* 11mins](https://youtu.be/uID4ZHLgTJQ)<br/>Llevamos a la programación la intuición desarrollada en el video anterior.
+**6.06 - Programando PCA** [Video 11mins](https://youtu.be/3XmMFGmCwyQ)<br/>Llevamos a la programación la intuición desarrollada en el video anterior.
 
 **6.07 - PCA Ejemplo práctico** [Video 17mins](https://youtu.be/FUwnh8e4Ia4)<br/>Realizamos un ejemplo práctico de PCA como preprocesamiento de un pipeline de clasificación de MNIST.
 
